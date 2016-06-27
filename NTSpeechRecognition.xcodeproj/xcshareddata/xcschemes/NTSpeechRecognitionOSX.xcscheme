@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A9F505C51D193F7200498B4E"
-               BuildableName = "NTSpeechRecognizer.framework"
-               BlueprintName = "NTSpeechRecognizerIOS"
-               ReferencedContainer = "container:NTSpeechRecognizer.xcodeproj">
+               BlueprintIdentifier = "A9F505B51D193F4300498B4E"
+               BuildableName = "NTSpeechRecognition.framework"
+               BlueprintName = "NTSpeechRecognitionOSX"
+               ReferencedContainer = "container:NTSpeechRecognition.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,10 +45,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A9F505C51D193F7200498B4E"
-            BuildableName = "NTSpeechRecognizer.framework"
-            BlueprintName = "NTSpeechRecognizerIOS"
-            ReferencedContainer = "container:NTSpeechRecognizer.xcodeproj">
+            BlueprintIdentifier = "A9F505B51D193F4300498B4E"
+            BuildableName = "NTSpeechRecognition.framework"
+            BlueprintName = "NTSpeechRecognitionOSX"
+            ReferencedContainer = "container:NTSpeechRecognition.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -63,10 +63,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A9F505C51D193F7200498B4E"
-            BuildableName = "NTSpeechRecognizer.framework"
-            BlueprintName = "NTSpeechRecognizerIOS"
-            ReferencedContainer = "container:NTSpeechRecognizer.xcodeproj">
+            BlueprintIdentifier = "A9F505B51D193F4300498B4E"
+            BuildableName = "NTSpeechRecognition.framework"
+            BlueprintName = "NTSpeechRecognitionOSX"
+            ReferencedContainer = "container:NTSpeechRecognition.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

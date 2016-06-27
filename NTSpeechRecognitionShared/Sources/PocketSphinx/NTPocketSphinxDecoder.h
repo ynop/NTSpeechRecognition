@@ -1,6 +1,6 @@
 //
 //  NTPocketSphinxDecoder.h
-//  NTSpeechRecognizer
+//  NTSpeechRecognition
 //
 //  Created by Matthias Büchi on 21/06/16.
 //  Copyright © 2016 ZHAW Institute of Applied Information Technology. All rights reserved.
@@ -118,6 +118,15 @@
  *  @return Yes on succes, NO on failure
  */
 - (BOOL)removeSearchWithName:(NSString*)name;
+
+/*!
+ *  Get search with the given name.
+ *
+ *  @param name name
+ *
+ *  @return Search if existing, otherwise nil
+ */
+- (NTSpeechSearch*)searchWithName:(NSString*)name;
 
 #pragma mark - Processing
 /*!

@@ -1,6 +1,6 @@
 //
 //  NTPocketSphinxDecoder.m
-//  NTSpeechRecognizer
+//  NTSpeechRecognition
 //
 //  Created by Matthias Büchi on 21/06/16.
 //  Copyright © 2016 ZHAW Institute of Applied Information Technology. All rights reserved.
@@ -22,8 +22,19 @@
 
 - (instancetype)init
 {
-    //TODO: define default confi
-    NTPocketSphinxConfig* default_config = [NTPocketSphinxConfig new];
+    NSString* basePath = [[NSBundle bundleForClass:self.class] resourcePath];
+
+    NSString* model = [basePath stringByAppendingPathComponent:@"en-us"];
+    NSString* lm = [basePath stringByAppendingPathComponent:@"en-us.lm.bin"];
+    NSString* dict = [basePath stringByAppendingPathComponent:@"cmudict-en-us.dic"];
+    NSString* noisedict = [model stringByAppendingPathComponent:@"noisedict"];
+
+    NTPocketSphinxConfig* default_config = [NTPocketSphinxConfig configWithOptions:@{
+        @"-hmm" : model,
+        @"-lm" : lm,
+        @"-dict" : dict,
+        @"-fdict" : noisedict
+    }];
 
     return [self initWithConfiguration:default_config];
 }
@@ -216,6 +227,11 @@
     }
 
     return success == 0;
+}
+
+- (NTSpeechSearch*)searchWithName:(NSString*)name
+{
+    return self.internalSearches[name];
 }
 
 #pragma mark - Processing

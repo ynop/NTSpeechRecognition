@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:NTSpeechRecognizer.xcodeproj">
+      location = "group:/Users/matthi/Documents/ECFP/NTSpeech/NTSpeechRecognition.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Carthage/Checkouts/NTSpeechTools/NTSpeechTools.xcodeproj">

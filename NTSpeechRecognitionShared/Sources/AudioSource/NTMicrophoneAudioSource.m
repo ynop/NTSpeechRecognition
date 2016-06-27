@@ -1,6 +1,6 @@
 //
 //  NTMicrophoneAudioSource.m
-//  NTSpeechRecognizer
+//  NTSpeechRecognition
 //
 //  Created by Matthias Büchi on 24/06/16.
 //  Copyright © 2016 ZHAW Institute of Applied Information Technology. All rights reserved.
@@ -86,7 +86,7 @@ static void inputCallback(
     BOOL success = [self checkOSStatus:status message:@"Failed to create AudioQueue!"];
 
     if (success) {
-        [self deriveBufferSizeForSeconds:0.1];
+        [self deriveBufferSizeForSeconds:0.2];
         success = [self initializeBuffers];
     }
 

@@ -1,6 +1,6 @@
 //
 //  NTPocketSphinxConfiguration.m
-//  NTSpeechRecognizer
+//  NTSpeechRecognition
 //
 //  Created by Matthias Büchi on 21/06/16.
 //  Copyright © 2016 ZHAW Institute of Applied Information Technology. All rights reserved.
@@ -22,15 +22,22 @@
     self = [super init];
     if (self) {
         self.config = cmd_ln_init(NULL, ps_args(), TRUE, NULL);
+
+        [self setOptions:options];
     }
     return self;
+}
+
+- (void*)ps_config
+{
+    return self.config;
 }
 
 #pragma mark - Generic Access
 - (void)setOptions:(NSDictionary<NSString*, NSString*>*)options
 {
     for (NSString* option in options.allKeys) {
-        [self setValue:options[option] forKey:option];
+        [self setValue:options[option] forOptionWithName:option];
     }
 }
 
@@ -49,7 +56,7 @@
 - (void)setValue:(NSString*)value forOptionWithName:(NSString*)name
 {
     const char* cName = [name cStringUsingEncoding:NSUTF8StringEncoding];
-    const char* cValue = [name cStringUsingEncoding:NSUTF8StringEncoding];
+    const char* cValue = [value cStringUsingEncoding:NSUTF8StringEncoding];
 
     cmd_ln_set_str_r(self.config, cName, cValue);
 }

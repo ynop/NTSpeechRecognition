@@ -8,10 +8,11 @@
 
 #import "AppDelegate.h"
 
-#import <NTSpeechRecognizer/NTSpeechRecognizer.h>
+#import <NTSpeechRecognition/NTSpeechRecognition.h>
 
 @interface AppDelegate () <NTAudioSourceDelegate>
 
+@property (nonatomic, strong) NTPocketSphinxRecognizer* recognizer;
 @property (nonatomic, strong) NTMicrophoneAudioSource* source;
 
 @property (nonatomic, strong) NSMutableData* data;
@@ -23,7 +24,7 @@
 - (void)audioSource:(NTAudioSource*)audioSource didReadData:(NSData*)data
 {
     NSLog(@"DATA %lu", (unsigned long)data.length);
-    
+
     [self.data appendData:data];
 }
 
@@ -33,9 +34,11 @@
     //NTPocketSphinxDecoder* decoder = [NTPocketSphinxDecoder new];
 
     self.source = [NTMicrophoneAudioSource new];
+    self.recognizer = [[NTPocketSphinxRecognizer alloc] initWithAudioSource:self.source];
 
     [self.source addDelegate:self];
 
+    [self.recognizer start];
     [self.source start];
 
     /*
@@ -101,7 +104,7 @@
 - (void)applicationWillTerminate:(NSNotification*)aNotification
 {
     // Insert code here to tear down your application
-    
+
     [self.data writeToFile:@"/Users/matthi/Documents/test.wav" atomically:NO];
 }
 
