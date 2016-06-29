@@ -23,8 +23,6 @@
 
 - (void)audioSource:(NTAudioSource*)audioSource didReadData:(NSData*)data
 {
-    NSLog(@"DATA %lu", (unsigned long)data.length);
-
     [self.data appendData:data];
 }
 

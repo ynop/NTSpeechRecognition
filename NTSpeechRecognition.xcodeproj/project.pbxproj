@@ -152,6 +152,14 @@
 		A99C2B501D2163A0001FA630 /* goforward.raw in Resources */ = {isa = PBXBuildFile; fileRef = A99C2A671D216308001FA630 /* goforward.raw */; };
 		A99C2B511D2163A0001FA630 /* numbers.raw in Resources */ = {isa = PBXBuildFile; fileRef = A99C2A681D216308001FA630 /* numbers.raw */; };
 		A99C2B521D2163A0001FA630 /* something.raw in Resources */ = {isa = PBXBuildFile; fileRef = A99C2A691D216308001FA630 /* something.raw */; };
+		A99C2B551D219555001FA630 /* numbers.dic in Resources */ = {isa = PBXBuildFile; fileRef = A99C2B531D219555001FA630 /* numbers.dic */; };
+		A99C2B561D219555001FA630 /* numbers.dic in Resources */ = {isa = PBXBuildFile; fileRef = A99C2B531D219555001FA630 /* numbers.dic */; };
+		A99C2B571D219555001FA630 /* numbers.jsgf in Resources */ = {isa = PBXBuildFile; fileRef = A99C2B541D219555001FA630 /* numbers.jsgf */; };
+		A99C2B581D219555001FA630 /* numbers.jsgf in Resources */ = {isa = PBXBuildFile; fileRef = A99C2B541D219555001FA630 /* numbers.jsgf */; };
+		A99C2B721D229DBF001FA630 /* NTPocketSphinxConfigArgument.h in Headers */ = {isa = PBXBuildFile; fileRef = A99C2B701D229DBF001FA630 /* NTPocketSphinxConfigArgument.h */; };
+		A99C2B731D229DBF001FA630 /* NTPocketSphinxConfigArgument.h in Headers */ = {isa = PBXBuildFile; fileRef = A99C2B701D229DBF001FA630 /* NTPocketSphinxConfigArgument.h */; };
+		A99C2B741D229DBF001FA630 /* NTPocketSphinxConfigArgument.m in Sources */ = {isa = PBXBuildFile; fileRef = A99C2B711D229DBF001FA630 /* NTPocketSphinxConfigArgument.m */; };
+		A99C2B751D229DBF001FA630 /* NTPocketSphinxConfigArgument.m in Sources */ = {isa = PBXBuildFile; fileRef = A99C2B711D229DBF001FA630 /* NTPocketSphinxConfigArgument.m */; };
 		A9F506B71D195BBC00498B4E /* NTSpeechRecognition.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9F505B61D193F4300498B4E /* NTSpeechRecognition.framework */; };
 		A9F506E61D195E2800498B4E /* NTSpeechRecognition.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9F505C61D193F7200498B4E /* NTSpeechRecognition.framework */; };
 		A9F506E81D195ED300498B4E /* NTSpeechRecognition.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A9F505C61D193F7200498B4E /* NTSpeechRecognition.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -275,6 +283,10 @@
 		A99C2B3B1D21635D001FA630 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		A99C2B3C1D21635D001FA630 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		A99C2B441D21639C001FA630 /* en-us */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "en-us"; sourceTree = "<group>"; };
+		A99C2B531D219555001FA630 /* numbers.dic */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = numbers.dic; sourceTree = "<group>"; };
+		A99C2B541D219555001FA630 /* numbers.jsgf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = numbers.jsgf; sourceTree = "<group>"; };
+		A99C2B701D229DBF001FA630 /* NTPocketSphinxConfigArgument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTPocketSphinxConfigArgument.h; sourceTree = "<group>"; };
+		A99C2B711D229DBF001FA630 /* NTPocketSphinxConfigArgument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTPocketSphinxConfigArgument.m; sourceTree = "<group>"; };
 		A9F505B61D193F4300498B4E /* NTSpeechRecognition.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NTSpeechRecognition.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9F505C61D193F7200498B4E /* NTSpeechRecognition.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NTSpeechRecognition.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9F506A31D195B8200498B4E /* NTSpeechRecognition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NTSpeechRecognition.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -412,6 +424,8 @@
 		A99C2A5A1D216308001FA630 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A99C2B531D219555001FA630 /* numbers.dic */,
+				A99C2B541D219555001FA630 /* numbers.jsgf */,
 				A99C2B441D21639C001FA630 /* en-us */,
 				A99C2A5B1D216308001FA630 /* cmudict-en-us.dic */,
 				A99C2A651D216308001FA630 /* en-us-phone.lm.bin */,
@@ -453,6 +467,8 @@
 				A99C2A731D216308001FA630 /* NTPocketSphinxConfig.m */,
 				A99C2A741D216308001FA630 /* NTPocketSphinxDecoder.h */,
 				A99C2A751D216308001FA630 /* NTPocketSphinxDecoder.m */,
+				A99C2B701D229DBF001FA630 /* NTPocketSphinxConfigArgument.h */,
+				A99C2B711D229DBF001FA630 /* NTPocketSphinxConfigArgument.m */,
 			);
 			path = PocketSphinx;
 			sourceTree = "<group>";
@@ -596,6 +612,7 @@
 				A99C2ACF1D216308001FA630 /* strfuncs.h in Headers */,
 				A99C2A8D1D216308001FA630 /* bio.h in Headers */,
 				A99C2AB31D216308001FA630 /* heap.h in Headers */,
+				A99C2B721D229DBF001FA630 /* NTPocketSphinxConfigArgument.h in Headers */,
 				A99C2AF51D216308001FA630 /* NTMicrophoneAudioSource.h in Headers */,
 				A99C2AA51D216308001FA630 /* feat.h in Headers */,
 				A99C2AA91D216308001FA630 /* fixpoint.h in Headers */,
@@ -654,6 +671,7 @@
 				A99C2AD01D216308001FA630 /* strfuncs.h in Headers */,
 				A99C2A8E1D216308001FA630 /* bio.h in Headers */,
 				A99C2AB41D216308001FA630 /* heap.h in Headers */,
+				A99C2B731D229DBF001FA630 /* NTPocketSphinxConfigArgument.h in Headers */,
 				A99C2AF61D216308001FA630 /* NTMicrophoneAudioSource.h in Headers */,
 				A99C2AA61D216308001FA630 /* feat.h in Headers */,
 				A99C2AAA1D216308001FA630 /* fixpoint.h in Headers */,
@@ -822,10 +840,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				A99C2B451D21639C001FA630 /* en-us in Resources */,
+				A99C2B571D219555001FA630 /* numbers.jsgf in Resources */,
 				A99C2B4C1D2163A0001FA630 /* something.raw in Resources */,
 				A99C2B471D2163A0001FA630 /* cmudict-en-us.dic in Resources */,
 				A99C2B491D2163A0001FA630 /* en-us.lm.bin in Resources */,
 				A99C2B4A1D2163A0001FA630 /* goforward.raw in Resources */,
+				A99C2B551D219555001FA630 /* numbers.dic in Resources */,
 				A99C2B481D2163A0001FA630 /* en-us-phone.lm.bin in Resources */,
 				A99C2B4B1D2163A0001FA630 /* numbers.raw in Resources */,
 			);
@@ -836,10 +856,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				A99C2B461D21639C001FA630 /* en-us in Resources */,
+				A99C2B581D219555001FA630 /* numbers.jsgf in Resources */,
 				A99C2B521D2163A0001FA630 /* something.raw in Resources */,
 				A99C2B4D1D2163A0001FA630 /* cmudict-en-us.dic in Resources */,
 				A99C2B4F1D2163A0001FA630 /* en-us.lm.bin in Resources */,
 				A99C2B501D2163A0001FA630 /* goforward.raw in Resources */,
+				A99C2B561D219555001FA630 /* numbers.dic in Resources */,
 				A99C2B4E1D2163A0001FA630 /* en-us-phone.lm.bin in Resources */,
 				A99C2B511D2163A0001FA630 /* numbers.raw in Resources */,
 			);
@@ -876,6 +898,7 @@
 				A99C2AFD1D216308001FA630 /* NTPocketSphinxConfig.m in Sources */,
 				A99C2B011D216308001FA630 /* NTPocketSphinxDecoder.m in Sources */,
 				A99C2B0B1D216308001FA630 /* NTFileSystem.m in Sources */,
+				A99C2B741D229DBF001FA630 /* NTPocketSphinxConfigArgument.m in Sources */,
 				A99C2AF71D216308001FA630 /* NTMicrophoneAudioSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -889,6 +912,7 @@
 				A99C2AFE1D216308001FA630 /* NTPocketSphinxConfig.m in Sources */,
 				A99C2B021D216308001FA630 /* NTPocketSphinxDecoder.m in Sources */,
 				A99C2B0C1D216308001FA630 /* NTFileSystem.m in Sources */,
+				A99C2B751D229DBF001FA630 /* NTPocketSphinxConfigArgument.m in Sources */,
 				A99C2AF81D216308001FA630 /* NTMicrophoneAudioSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -160,7 +160,7 @@
  *
  *  @return Number of frames of data searched, or <0 for error.
  */
-- (int)processData:(int16_t*)data samples:(size_t)numberOfSamples;
+- (int)processData:(SInt16*)data samples:(size_t)numberOfSamples;
 
 /*!
  *  Decode raw audio data.
@@ -172,7 +172,7 @@
  *
  *  @return Number of frames of data searched, or <0 for error.
  */
-- (int)processData:(int16_t*)data samples:(size_t)numberOfSamples noSearch:(BOOL)noSearch fullUtterance:(BOOL)isFullUtterance;
+- (int)processData:(SInt16*)data samples:(size_t)numberOfSamples noSearch:(BOOL)noSearch fullUtterance:(BOOL)isFullUtterance;
 
 #pragma mark - Hypotheses
 /*!

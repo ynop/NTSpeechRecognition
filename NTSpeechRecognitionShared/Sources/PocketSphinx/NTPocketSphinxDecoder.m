@@ -25,13 +25,13 @@
     NSString* basePath = [[NSBundle bundleForClass:self.class] resourcePath];
 
     NSString* model = [basePath stringByAppendingPathComponent:@"en-us"];
-    NSString* lm = [basePath stringByAppendingPathComponent:@"en-us.lm.bin"];
-    NSString* dict = [basePath stringByAppendingPathComponent:@"cmudict-en-us.dic"];
+    NSString* lm = [basePath stringByAppendingPathComponent:@"numbers.jsgf"];
+    NSString* dict = [basePath stringByAppendingPathComponent:@"numbers.dic"];
     NSString* noisedict = [model stringByAppendingPathComponent:@"noisedict"];
 
     NTPocketSphinxConfig* default_config = [NTPocketSphinxConfig configWithOptions:@{
         @"-hmm" : model,
-        @"-lm" : lm,
+        @"-jsgf" : lm,
         @"-dict" : dict,
         @"-fdict" : noisedict
     }];
@@ -49,6 +49,11 @@
         _config = config;
     }
     return self;
+}
+
+- (void)dealloc
+{
+    ps_free(self.decoder);
 }
 
 #pragma mark - Configuration
@@ -250,12 +255,12 @@
     return ps_get_in_speech(self.decoder);
 }
 
-- (int)processData:(int16_t*)data samples:(size_t)numberOfSamples
+- (int)processData:(SInt16*)data samples:(size_t)numberOfSamples
 {
     return [self processData:data samples:numberOfSamples noSearch:NO fullUtterance:NO];
 }
 
-- (int)processData:(int16_t*)data samples:(size_t)numberOfSamples noSearch:(BOOL)noSearch fullUtterance:(BOOL)isFullUtterance
+- (int)processData:(SInt16*)data samples:(size_t)numberOfSamples noSearch:(BOOL)noSearch fullUtterance:(BOOL)isFullUtterance
 {
     int cNoSearch = 0;
     int cFullUtterance = 0;
@@ -284,7 +289,9 @@
     NSString* value = [NSString stringWithCString:cValue encoding:NSUTF8StringEncoding];
     double score = pow(10.0, psScore);
 
-    return [NTHypothesis hypothesis:value score:score];
+    SInt32 prob = ps_get_prob(self.decoder);
+
+    return [NTHypothesis hypothesis:value score:score probability:prob];
 }
 
 - (NTHypothesis*)getHypothesisFinal:(BOOL*)isFinal

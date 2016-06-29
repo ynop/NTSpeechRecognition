@@ -20,6 +20,21 @@ typedef NS_ENUM(NSUInteger, NTSpeechState) {
 
 @property (nonatomic) NTSpeechState speechState;
 
+@property (nonatomic) int sampleRate;
+
+/*!
+ *  Threshold to detect a pause between utterances in seconds.
+ */
+@property (nonatomic) CFTimeInterval pauseThreshold;
+
+/*!
+ *  The time is elapsed since the silence began.
+ */
+@property (nonatomic) CFTimeInterval timeSinceSilenceStarted;
+
+@property (nonatomic) BOOL utteranceStarted;
+@property (nonatomic) BOOL speechDetectedWithinUtterance;
+
 @end
 
 @implementation NTPocketSphinxRecognizer
@@ -35,7 +50,32 @@ typedef NS_ENUM(NSUInteger, NTSpeechState) {
 
 - (instancetype)initWithAudioSource:(NTAudioSource*)audioSource
 {
-    return [self initWithPocketSphinxDecoder:[NTPocketSphinxDecoder new] audioSource:audioSource];
+    NSString* basePath = [[NSBundle bundleForClass:self.class] resourcePath];
+
+    NSString* model = [basePath stringByAppendingPathComponent:@"en-us"];
+    NSString* lm = [basePath stringByAppendingPathComponent:@"numbers.jsgf"];
+    NSString* dict = [basePath stringByAppendingPathComponent:@"numbers.dic"];
+    NSString* noisedict = [model stringByAppendingPathComponent:@"noisedict"];
+
+    NTPocketSphinxConfig* config = [NTPocketSphinxConfig configWithOptions:@{
+        @"-hmm" : model,
+        @"-jsgf" : lm,
+        @"-dict" : dict,
+        @"-fdict" : noisedict,
+        @"-remove_noise" : @(YES),
+        @"-remove_silence" : @(YES),
+        @"-bestpath" : @(NO),
+        @"-lw" : @(1.0),
+        @"-vad_startspeech" : @(10),
+        @"-vad_threshold" : @(2.3),
+        @"-cmn" : @"current",
+        @"-rawlogdir" : @"/Users/matthi/Documents/TEMP"
+        
+    }];
+
+    NTPocketSphinxDecoder* decoder = [[NTPocketSphinxDecoder alloc] initWithConfiguration:config];
+
+    return [self initWithPocketSphinxDecoder:decoder audioSource:audioSource];
 }
 
 - (instancetype)initWithPocketSphinxDecoder:(NTPocketSphinxDecoder*)decoder
@@ -51,6 +91,8 @@ typedef NS_ENUM(NSUInteger, NTSpeechState) {
         self.audioSource = audioSource;
         self.decodeQueue = dispatch_queue_create("ch.zhaw.init.NTPocketSphinxRecognizer.decodeQueue", NULL);
         self.speechState = NTSpeechStateNothing;
+        self.sampleRate = 16000;
+        self.pauseThreshold = 0.5;
     }
     return self;
 }
@@ -85,9 +127,16 @@ typedef NS_ENUM(NSUInteger, NTSpeechState) {
 - (void)decodeData:(NSData*)data
 {
     if (self.isListening) {
-        if (self.speechState == NTSpeechStateNothing) {
+        int nrOfSamples = data.length / 2;
+        CFTimeInterval duration = ((double)nrOfSamples) / ((double)self.sampleRate);
+
+        // BEGIN UTTERANCE
+        if (!self.utteranceStarted) {
             if ([self.decoder startUtterance]) {
-                self.speechState = NTSpeechStateUtterance;
+                NSLog(@"Starting utterance");
+                self.utteranceStarted = YES;
+                self.speechDetectedWithinUtterance = NO;
+                self.timeSinceSilenceStarted = 0;
             }
             else {
                 NSLog(@"Failed to start utterance. Stop decoding.");
@@ -95,21 +144,37 @@ typedef NS_ENUM(NSUInteger, NTSpeechState) {
             }
         }
 
-        [self.decoder processData:(int16_t*)data.bytes samples:data.length / 2];
+        // PROCESS SAMPLES
+        int nrSamplesProcessed = [self.decoder processData:(SInt16*)data.bytes samples:nrOfSamples];
+
+        if (nrSamplesProcessed < 0) {
+            NSLog(@"Failed to decode data chunk.");
+        }
 
         BOOL containsSpeech = [self.decoder inSpeech];
 
+        // CHECK FOR SPEECH
         if (containsSpeech) {
-            self.speechState = NTSpeechStateSpeech;
+            if (!self.speechDetectedWithinUtterance) {
+                self.speechDetectedWithinUtterance = YES;
+
+                NSLog(@"Detected Speech");
+            }
+            self.timeSinceSilenceStarted = 0;
         }
         else {
-            if (self.speechState == NTSpeechStateUtterance) {
-                self.speechState = NTSpeechStateNothing;
-                [self.decoder endUtterance];
+            self.timeSinceSilenceStarted += duration;
+        }
 
-                NTHypothesis* hyp = [self.decoder getHypothesis];
-                NSLog(@"received hyp %@", hyp.value);
-            }
+        // DETERMINE IF END OF UTTERANCE
+        if (self.speechDetectedWithinUtterance && self.timeSinceSilenceStarted >= self.pauseThreshold) {
+            [self.decoder endUtterance];
+            self.utteranceStarted = NO;
+
+            NSLog(@"Ending utterance");
+
+            NTHypothesis* hyp = [self.decoder getHypothesis];
+            NSLog(@"received hyp %@ %f", hyp.value, hyp.posteriorProbability);
         }
     }
 }
