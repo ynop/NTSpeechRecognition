@@ -10,7 +10,7 @@
 
 #import <NTSpeechRecognition/NTSpeechRecognition.h>
 
-@interface AppDelegate () <NTAudioSourceDelegate>
+@interface AppDelegate () <NTAudioSourceDelegate, NTSpeechRecognizerDelegate>
 
 @property (nonatomic, strong) NTPocketSphinxRecognizer* recognizer;
 @property (nonatomic, strong) NTMicrophoneAudioSource* source;
@@ -26,6 +26,16 @@
     [self.data appendData:data];
 }
 
+- (void)speechRecognizer:(id<NTSpeechRecognizer>)speechRecognizer didReceiveHypothesis:(NTHypothesis*)hypothesis forSearch:(NTSpeechSearch*)search
+{
+    NSLog(@"received hyp %@ %f", hypothesis.value, hypothesis.posteriorProbability);
+}
+
+- (void)speechRecognizer:(id<NTSpeechRecognizer>)speechRecognizer didChangeListeningState:(BOOL)isListening
+{
+    NSLog(@"Changed state %@", isListening ? @"ON" : @"OFF");
+}
+
 - (void)applicationDidFinishLaunching:(NSNotification*)aNotification
 {
     self.data = [NSMutableData data];
@@ -33,6 +43,7 @@
 
     self.source = [NTMicrophoneAudioSource new];
     self.recognizer = [[NTPocketSphinxRecognizer alloc] initWithAudioSource:self.source];
+    [self.recognizer addDelegate:self];
 
     [self.source addDelegate:self];
 

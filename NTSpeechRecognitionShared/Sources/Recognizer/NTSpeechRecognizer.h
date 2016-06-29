@@ -11,7 +11,7 @@
 
 #import "NTAudioSource.h"
 
-//@protocol NTSpeechRecognizer;
+@protocol NTSpeechRecognizer;
 
 /*!
  *  Delegate used to notify on state changes and received hypotheses.
@@ -26,7 +26,7 @@
  *  @param speechRecognizer The recognizer that triggered the event.
  *  @param isListening      The listening state of the recognizer.
  */
-- (void)speechRecognizer:(id)speechRecognizer didChangeListeningState:(BOOL)isListening;
+- (void)speechRecognizer:(id<NTSpeechRecognizer>)speechRecognizer didChangeListeningState:(BOOL)isListening;
 
 /*!
  *  Is called when recognizer found a hypothesis.
@@ -35,7 +35,7 @@
  *  @param hypothesis       The found hypothesis.
  *  @param search           The search which was active when the hyp was recognized.
  */
-- (void)speechRecognizer:(id)speechRecognizer didReceiveHypothesis:(NTHypothesis*)hypothesis forSearch:(NTSpeechSearch*)search;
+- (void)speechRecognizer:(id<NTSpeechRecognizer>)speechRecognizer didReceiveHypothesis:(NTHypothesis*)hypothesis forSearch:(NTSpeechSearch*)search;
 
 @end
 
@@ -199,5 +199,20 @@
  *  @return Search if existing, otherwise nil.
  */
 - (NTSpeechSearch*)searchWithName:(NSString*)name;
+
+#pragma mark - Delegates
+/*!
+ *  Adds a delegate
+ *
+ *  @param delegate delegate
+ */
+- (void)addDelegate:(id<NTSpeechRecognizerDelegate>)delegate;
+
+/*!
+ *  Removes a delegate
+ *
+ *  @param delegate delegate
+ */
+- (void)removeDelegate:(id<NTSpeechRecognizerDelegate>)delegate;
 
 @end

@@ -13,7 +13,20 @@
 
 @interface NTPocketSphinxRecognizer : NSObject <NTSpeechRecognizer>
 
+/*!
+ *  The pocketsphinx decoder used to decode data.
+ */
 @property (nonatomic, strong, readonly) NTPocketSphinxDecoder* decoder;
+
+/*!
+ *  The sample rate of audio data.
+ */
+@property (nonatomic) int sampleRate;
+
+/*!
+ *  Threshold to detect a pause between utterances in seconds.
+ */
+@property (nonatomic) CFTimeInterval pauseThreshold;
 
 - (instancetype)initWithAudioSource:(NTAudioSource*)audioSource;
 
