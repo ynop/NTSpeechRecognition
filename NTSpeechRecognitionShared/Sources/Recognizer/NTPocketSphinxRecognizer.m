@@ -39,6 +39,7 @@
 @synthesize audioSource = _audioSource;
 @synthesize isStarted = _isStarted;
 @synthesize isSuspended = _isSuspended;
+@synthesize returnNullHypotheses = _returnNullHypotheses;
 
 - (instancetype)init
 {
@@ -69,6 +70,10 @@
     return self;
 }
 
+- (void)dealloc
+{
+}
+
 #pragma mark - State
 - (void)start
 {
@@ -97,6 +102,11 @@
 {
     if (self.isListening) {
         _isSuspended = YES;
+
+        dispatch_async(self.decodeQueue, ^{
+            [self suspendDecoding];
+        });
+
         [self notifyDidChangeListeningState:self.isListening];
     }
     else {
@@ -109,6 +119,11 @@
     if (self.isSuspended) {
         [self resetStateForDecoding];
         _isSuspended = NO;
+
+        dispatch_async(self.decodeQueue, ^{
+            [self suspendDecoding];
+        });
+
         [self notifyDidChangeListeningState:self.isListening];
     }
     else {
@@ -121,7 +136,27 @@
     return self.isStarted && !self.isSuspended;
 }
 
-#pragma mark - Decoding
+#pragma mark - Decoding (Executed via dispatch queue)
+- (void)suspendDecoding
+{
+    if (self.utteranceStarted) {
+        [self.decoder endUtterance];
+        [self resetStateForDecoding];
+
+        NSLog(@"Ending utterance");
+    }
+}
+
+- (void)changeActiveSearch:(NSString*)name
+{
+    if (self.utteranceStarted) {
+        [self.decoder endUtterance];
+        [self resetStateForDecoding];
+    }
+
+    [self.decoder setActiveSearchWithName:name];
+}
+
 - (void)decodeData:(NSData*)data
 {
     if (self.isListening) {
@@ -172,7 +207,10 @@
             NSLog(@"Ending utterance");
 
             NTHypothesis* hyp = [self.decoder getHypothesis];
-            [self notifyHypothesisReceived:hyp];
+
+            if (self.returnNullHypotheses || ![hyp isNull]) {
+                [self notifyHypothesisReceived:hyp];
+            }
         }
     }
 }
@@ -270,7 +308,17 @@
 
 - (BOOL)setActiveSearchByName:(NSString*)name
 {
-    return [self.decoder setActiveSearchWithName:name];
+    if ([self searchWithName:name]) {
+
+        dispatch_async(self.decodeQueue, ^{
+            [self changeActiveSearch:name];
+        });
+
+        return YES;
+    }
+    else {
+        return NO;
+    }
 }
 
 - (NTSpeechSearch*)searchWithName:(NSString*)name

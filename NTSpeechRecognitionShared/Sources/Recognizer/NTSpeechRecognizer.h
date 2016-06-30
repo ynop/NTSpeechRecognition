@@ -81,6 +81,11 @@
  */
 @property (nonatomic, strong) NTAudioSource* audioSource;
 
+/*!
+ *  Whether the recognizer should notify about NULL Hypotheses.
+ */
+@property (nonatomic) BOOL returnNullHypotheses;
+
 #pragma mark - Init
 /*!
  *  Creates a new recognizer with a given audio source.

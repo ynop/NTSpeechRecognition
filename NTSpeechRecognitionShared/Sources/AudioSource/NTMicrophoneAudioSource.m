@@ -86,7 +86,7 @@ static void inputCallback(
     BOOL success = [self checkOSStatus:status message:@"Failed to create AudioQueue!"];
 
     if (success) {
-        [self deriveBufferSizeForSeconds:0.2];
+        [self deriveBufferSizeForSeconds:0.1];
         success = [self initializeBuffers];
     }
 

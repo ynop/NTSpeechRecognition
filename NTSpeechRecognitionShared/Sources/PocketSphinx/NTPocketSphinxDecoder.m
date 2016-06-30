@@ -22,18 +22,8 @@
 
 - (instancetype)init
 {
-    NSString* basePath = [[NSBundle bundleForClass:self.class] resourcePath];
-
-    NSString* model = [basePath stringByAppendingPathComponent:@"en-us"];
-    NSString* lm = [basePath stringByAppendingPathComponent:@"numbers.jsgf"];
-    NSString* dict = [basePath stringByAppendingPathComponent:@"numbers.dic"];
-    NSString* noisedict = [model stringByAppendingPathComponent:@"noisedict"];
-
     NTPocketSphinxConfig* default_config = [NTPocketSphinxConfig configWithOptions:@{
-        @"-hmm" : model,
-        @"-jsgf" : lm,
-        @"-dict" : dict,
-        @"-fdict" : noisedict
+        @"-hmm" : [NTPocketSphinxDecoder pathToEnglishAcousticModel]
     }];
 
     return [self initWithConfiguration:default_config];
@@ -282,10 +272,6 @@
     SInt32 psScore = 0;
     const char* cValue = ps_get_hyp(self.decoder, &psScore);
 
-    if (cValue == NULL) {
-        return nil;
-    }
-
     NSString* value = [NSString stringWithCString:cValue encoding:NSUTF8StringEncoding];
     double score = pow(10.0, psScore);
 
@@ -298,6 +284,25 @@
 {
     //TODO: final??
     return nil;
+}
+
+#pragma mark - Models, Dicts,  ...
++ (NSString*)pathToEnglishAcousticModel
+{
+    NSString* basePath = [[NSBundle bundleForClass:self.class] resourcePath];
+    return [basePath stringByAppendingPathComponent:@"en-us"];
+}
+
++ (NSString*)pathToCMUDict
+{
+    NSString* basePath = [[NSBundle bundleForClass:self.class] resourcePath];
+    return [basePath stringByAppendingPathComponent:@"cmudict-en-us.dic"];
+}
+
++ (NSString*)pathToCMULanguageModel
+{
+    NSString* basePath = [[NSBundle bundleForClass:self.class] resourcePath];
+    return [basePath stringByAppendingPathComponent:@"en-us.lm.bin"];
 }
 
 @end

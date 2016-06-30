@@ -191,4 +191,26 @@
  */
 - (NTHypothesis*)getHypothesisFinal:(BOOL*)isFinal;
 
+#pragma mark - Models, Dicts,  ...
+/*!
+ *  Default English acoustic model
+ *
+ *  @return Path to the default english acoustic model
+ */
++ (NSString*)pathToEnglishAcousticModel;
+
+/*!
+ *  CMU Pronunciation Dictionary
+ *
+ *  @return Path to the CMU Dictionary
+ */
++ (NSString*)pathToCMUDict;
+
+/*!
+ *  CMU Language Model (The one shipped with PocketSphinx)
+ *
+ *  @return Path to the CMU Language model
+ */
++ (NSString*)pathToCMULanguageModel;
+
 @end
