@@ -18,6 +18,17 @@
 		A99656211D2553C200120D06 /* control.dic in Resources */ = {isa = PBXBuildFile; fileRef = A996561F1D2553C200120D06 /* control.dic */; };
 		A99656221D2553C200120D06 /* control.lm in Sources */ = {isa = PBXBuildFile; fileRef = A99656201D2553C200120D06 /* control.lm */; };
 		A99656231D25558F00120D06 /* control.lm in Resources */ = {isa = PBXBuildFile; fileRef = A99656201D2553C200120D06 /* control.lm */; };
+		A99656371D25829F00120D06 /* control.dic in Resources */ = {isa = PBXBuildFile; fileRef = A996562D1D25829F00120D06 /* control.dic */; };
+		A99656381D25829F00120D06 /* control.lm in Sources */ = {isa = PBXBuildFile; fileRef = A996562E1D25829F00120D06 /* control.lm */; };
+		A99656391D25829F00120D06 /* date.dic in Resources */ = {isa = PBXBuildFile; fileRef = A996562F1D25829F00120D06 /* date.dic */; };
+		A996563A1D25829F00120D06 /* date.jsgf in Resources */ = {isa = PBXBuildFile; fileRef = A99656301D25829F00120D06 /* date.jsgf */; };
+		A996563B1D25829F00120D06 /* icao_single.dic in Resources */ = {isa = PBXBuildFile; fileRef = A99656311D25829F00120D06 /* icao_single.dic */; };
+		A996563C1D25829F00120D06 /* icao_single.jsgf in Resources */ = {isa = PBXBuildFile; fileRef = A99656321D25829F00120D06 /* icao_single.jsgf */; };
+		A996563D1D25829F00120D06 /* numbers.dic in Resources */ = {isa = PBXBuildFile; fileRef = A99656331D25829F00120D06 /* numbers.dic */; };
+		A996563E1D25829F00120D06 /* numbers.jsgf in Resources */ = {isa = PBXBuildFile; fileRef = A99656341D25829F00120D06 /* numbers.jsgf */; };
+		A996563F1D25829F00120D06 /* yes_no.dic in Resources */ = {isa = PBXBuildFile; fileRef = A99656351D25829F00120D06 /* yes_no.dic */; };
+		A99656401D25829F00120D06 /* yes_no.jsgf in Resources */ = {isa = PBXBuildFile; fileRef = A99656361D25829F00120D06 /* yes_no.jsgf */; };
+		A99656411D2582EF00120D06 /* control.lm in Resources */ = {isa = PBXBuildFile; fileRef = A996562E1D25829F00120D06 /* control.lm */; };
 		A99C2A7D1D216308001FA630 /* cmdln_macro.h in Headers */ = {isa = PBXBuildFile; fileRef = A99C2A2D1D216308001FA630 /* cmdln_macro.h */; };
 		A99C2A7E1D216308001FA630 /* cmdln_macro.h in Headers */ = {isa = PBXBuildFile; fileRef = A99C2A2D1D216308001FA630 /* cmdln_macro.h */; };
 		A99C2A7F1D216308001FA630 /* pocketsphinx.h in Headers */ = {isa = PBXBuildFile; fileRef = A99C2A2E1D216308001FA630 /* pocketsphinx.h */; };
@@ -166,7 +177,6 @@
 		A9F506E81D195ED300498B4E /* NTSpeechRecognition.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A9F505C61D193F7200498B4E /* NTSpeechRecognition.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A9F508E81D1AC23C00498B4E /* NTSpeechTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9F508E71D1AC23C00498B4E /* NTSpeechTools.framework */; };
 		A9F508EC1D1AC25600498B4E /* NTSpeechTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9F508EB1D1AC25600498B4E /* NTSpeechTools.framework */; };
-		A9F508EE1D1AC28000498B4E /* NTSpeechTools.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A9F508E71D1AC23C00498B4E /* NTSpeechTools.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -186,7 +196,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				A9F508EE1D1AC28000498B4E /* NTSpeechTools.framework in Embed Frameworks */,
 				A9F506E81D195ED300498B4E /* NTSpeechRecognition.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -205,6 +214,16 @@
 		A99656161D2551D500120D06 /* yes_no.jsgf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = yes_no.jsgf; sourceTree = "<group>"; };
 		A996561F1D2553C200120D06 /* control.dic */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = control.dic; sourceTree = "<group>"; };
 		A99656201D2553C200120D06 /* control.lm */ = {isa = PBXFileReference; explicitFileType = text; fileEncoding = 4; path = control.lm; sourceTree = "<group>"; };
+		A996562D1D25829F00120D06 /* control.dic */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = control.dic; sourceTree = "<group>"; };
+		A996562E1D25829F00120D06 /* control.lm */ = {isa = PBXFileReference; explicitFileType = text; fileEncoding = 4; path = control.lm; sourceTree = "<group>"; };
+		A996562F1D25829F00120D06 /* date.dic */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = date.dic; sourceTree = "<group>"; };
+		A99656301D25829F00120D06 /* date.jsgf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = date.jsgf; sourceTree = "<group>"; };
+		A99656311D25829F00120D06 /* icao_single.dic */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = icao_single.dic; sourceTree = "<group>"; };
+		A99656321D25829F00120D06 /* icao_single.jsgf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = icao_single.jsgf; sourceTree = "<group>"; };
+		A99656331D25829F00120D06 /* numbers.dic */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = numbers.dic; sourceTree = "<group>"; };
+		A99656341D25829F00120D06 /* numbers.jsgf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = numbers.jsgf; sourceTree = "<group>"; };
+		A99656351D25829F00120D06 /* yes_no.dic */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = yes_no.dic; sourceTree = "<group>"; };
+		A99656361D25829F00120D06 /* yes_no.jsgf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = yes_no.jsgf; sourceTree = "<group>"; };
 		A99C2A2D1D216308001FA630 /* cmdln_macro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cmdln_macro.h; sourceTree = "<group>"; };
 		A99C2A2E1D216308001FA630 /* pocketsphinx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pocketsphinx.h; sourceTree = "<group>"; };
 		A99C2A2F1D216308001FA630 /* pocketsphinx_export.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pocketsphinx_export.h; sourceTree = "<group>"; };
@@ -356,6 +375,23 @@
 				A99656141D2551D500120D06 /* numbers.jsgf */,
 				A99656151D2551D500120D06 /* yes_no.dic */,
 				A99656161D2551D500120D06 /* yes_no.jsgf */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A996562C1D25829F00120D06 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A996562D1D25829F00120D06 /* control.dic */,
+				A996562E1D25829F00120D06 /* control.lm */,
+				A996562F1D25829F00120D06 /* date.dic */,
+				A99656301D25829F00120D06 /* date.jsgf */,
+				A99656311D25829F00120D06 /* icao_single.dic */,
+				A99656321D25829F00120D06 /* icao_single.jsgf */,
+				A99656331D25829F00120D06 /* numbers.dic */,
+				A99656341D25829F00120D06 /* numbers.jsgf */,
+				A99656351D25829F00120D06 /* yes_no.dic */,
+				A99656361D25829F00120D06 /* yes_no.jsgf */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -567,6 +603,7 @@
 		A99C2B311D21635D001FA630 /* NTSpeechRecognitionDemoIOS */ = {
 			isa = PBXGroup;
 			children = (
+				A996562C1D25829F00120D06 /* Resources */,
 				A99C2B321D21635D001FA630 /* AppDelegate.h */,
 				A99C2B331D21635D001FA630 /* AppDelegate.m */,
 				A99C2B341D21635D001FA630 /* Assets.xcassets */,
@@ -900,8 +937,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				A99C2B401D21635D001FA630 /* Main.storyboard in Resources */,
+				A996563A1D25829F00120D06 /* date.jsgf in Resources */,
+				A996563D1D25829F00120D06 /* numbers.dic in Resources */,
 				A99C2B3E1D21635D001FA630 /* Assets.xcassets in Resources */,
+				A99656401D25829F00120D06 /* yes_no.jsgf in Resources */,
+				A996563F1D25829F00120D06 /* yes_no.dic in Resources */,
+				A996563E1D25829F00120D06 /* numbers.jsgf in Resources */,
+				A99656391D25829F00120D06 /* date.dic in Resources */,
+				A99656371D25829F00120D06 /* control.dic in Resources */,
+				A996563C1D25829F00120D06 /* icao_single.jsgf in Resources */,
 				A99C2B3F1D21635D001FA630 /* LaunchScreen.storyboard in Resources */,
+				A99656411D2582EF00120D06 /* control.lm in Resources */,
+				A996563B1D25829F00120D06 /* icao_single.dic in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -953,6 +1000,7 @@
 			files = (
 				A99C2B431D21635D001FA630 /* ViewController.m in Sources */,
 				A99C2B421D21635D001FA630 /* main.m in Sources */,
+				A99656381D25829F00120D06 /* control.lm in Sources */,
 				A99C2B3D1D21635D001FA630 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

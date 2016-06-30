@@ -1,0 +1,77 @@
+#JSGF V1.0;
+
+grammar date;
+
+public <date> = (
+  ([THE] <day> [OF] <month> [<year>])
+  | <month> <day> [<year>]
+  | TODAY
+  | YESTERDAY
+  | TOMORROW
+);
+
+<one_to_nine> = ONE
+          | TWO
+          | THREE
+          | FOUR
+          | FIVE
+          | SIX
+          | SEVEN
+          | EIGHT
+          | NINE;
+
+<one_to_nine_ordinal> = FIRST
+        | SECOND
+        | THIRD
+        | FOURTH
+        | FIFTH
+        | SIXTH
+        | SEVENTH
+        | EIGHTH
+        | NINTH;
+
+<ten_to_nineteen> = TEN
+                  | ELEVEN
+                  | TWELVE
+                  | THIRTEEN
+                  | FOURTEEN
+                  | FIFTEEN
+                  | SIXTEEN
+                  | SEVENTEEN
+                  | EIGHTEEN
+                  | NINETEEN;
+
+<ten_to_nineteen_ordinal> = TENTH
+            | ELEVENTH
+            | TWELFTH
+            | THIRTEENTH
+            | FOURTEENTH
+            | FIFTEENTH
+            | SIXTEENTH
+            | EIGHTEENTH
+            | NINETEENTH;
+
+<twenty_or_thirty> = TWENTY | THIRTY;
+
+<twenty_to_twenty_nine_ordinal> = TWENTIETH | TWENTY <one_to_nine_ordinal>;
+
+<day> = <one_to_nine_ordinal>
+        | <ten_to_nineteen_ordinal>
+        | <twenty_to_twenty_nine_ordinal>
+        | THIRTIETH
+        | THIRTY FIRST;
+
+<month> = JANUARY
+          | FEBRUARY
+          | MARCH
+          | APRIL
+          | MAY
+          | JUNE
+          | JULY
+          | AUGUST
+          | SEPTEMBER
+          | OCTOBER
+          | NOVEMBER
+          | DECEMBER;
+
+<year> = TWO THOUSAND [AND] [([<twenty_or_thirty>] <one_to_nine>) | <ten_to_nineteen>];

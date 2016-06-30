@@ -1,0 +1,40 @@
+#JSGF V1.0;
+grammar abbr;
+public <abbr> = (
+ALPHA |
+BRAVO |
+CHARLIE |
+DELTA |
+ECHO |
+FOXTROT |
+GOLF |
+HOTEL |
+INDIA |
+JULIET |
+KILO |
+LIMA |
+MIKE |
+NOVEMBER |
+OSCAR |
+PAPA |
+QUEBEC |
+ROMEO |
+SIERRA |
+TANGO |
+UNIFORM |
+VICTOR |
+WHISKEY |
+XRAY |
+YANKEE |
+ZULU |
+ZERO |
+ONE |
+TWO |
+THREE |
+FOUR |
+FIVE |
+SIX |
+SEVEN |
+EIGHT |
+NINE
+);

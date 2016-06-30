@@ -11,6 +11,9 @@
 #import "NTPocketSphinxDecoder.h"
 #import "NTSpeechRecognizer.h"
 
+/*!
+ *  Speech Recognizer base on the pocketsphinx decoder.
+ */
 @interface NTPocketSphinxRecognizer : NSObject <NTSpeechRecognizer>
 
 /*!

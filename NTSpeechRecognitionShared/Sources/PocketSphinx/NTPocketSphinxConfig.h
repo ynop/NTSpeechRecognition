@@ -8,10 +8,23 @@
 
 #import <Foundation/Foundation.h>
 
+/*!
+ *  Represents a pocketsphinx config (cmd_ln_t). Per default the config is defined with ps_args().
+ */
 @interface NTPocketSphinxConfig : NSObject
 
+/*!
+ *  Pointer to the cmd_ln_t struct.
+ */
 @property (nonatomic) void* ps_config;
 
+/*!
+ *  Create a config with the given options.
+ *
+ *  @param options Options
+ *
+ *  @return Instance
+ */
 - (instancetype)initWithOptions:(NSDictionary<NSString*, NSString*>*)options;
 
 #pragma mark - Generic Access

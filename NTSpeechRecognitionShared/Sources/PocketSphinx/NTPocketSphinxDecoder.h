@@ -11,16 +11,38 @@
 
 #import "NTPocketSphinxConfig.h"
 
+/*!
+ *  A class that wraps the pocketsphinx decoder (ps_decoder_t). Like the underlying ps_decoder_t the decoder is not thread safe, so don't call methods from different threads at the same time.
+ */
 @interface NTPocketSphinxDecoder : NSObject
 
+/*!
+ *  The config currently is active for this decoder.
+ */
 @property (nonatomic, strong, readonly) NTPocketSphinxConfig* config;
 
+/*!
+ *  The dictionary currently is active.
+ */
 @property (nonatomic, strong, readonly) NTPronunciationDictionary* dictionary;
 
+/*!
+ *  The search currently is active.
+ */
 @property (nonatomic, strong, readonly) NTSpeechSearch* activeSearch;
 
+/*!
+ *  A list of searches which were added to the decoder.
+ */
 @property (nonatomic, strong, readonly) NSArray<NTSpeechSearch*>* searches;
 
+/*!
+ *  Create a decoder with the given config.
+ *
+ *  @param config Config
+ *
+ *  @return Instance
+ */
 - (instancetype)initWithConfiguration:(NTPocketSphinxConfig*)config;
 
 #pragma mark - Configuration

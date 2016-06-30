@@ -29,14 +29,17 @@ static void inputCallback(
 
 - (instancetype)init
 {
-    return [self initWithFormat:[NTMicrophoneAudioSource pocketsphinxFormat]];
+    self = [super init];
+    if (self) {
+        _numberOfBuffers = 5;
+    }
+    return self;
 }
 
 - (instancetype)initWithFormat:(AudioStreamBasicDescription)format
 {
-    self = [super init];
+    self = [super initWithFormat:format];
     if (self) {
-        _format = format;
         _numberOfBuffers = 5;
     }
     return self;
@@ -82,7 +85,9 @@ static void inputCallback(
 #pragma mark - configuration
 - (BOOL)setupQueue
 {
-    OSStatus status = AudioQueueNewInput(&_format, inputCallback, (__bridge void*)(self), NULL, kCFRunLoopCommonModes, 0, &_audioQueue);
+    AudioStreamBasicDescription format = self.format;
+
+    OSStatus status = AudioQueueNewInput(&format, inputCallback, (__bridge void*)(self), NULL, kCFRunLoopCommonModes, 0, &_audioQueue);
     BOOL success = [self checkOSStatus:status message:@"Failed to create AudioQueue!"];
 
     if (success) {
@@ -135,22 +140,6 @@ static void inputCallback(
     }
 
     return status == noErr;
-}
-
-+ (AudioStreamBasicDescription)pocketsphinxFormat
-{
-    AudioStreamBasicDescription targetFormat;
-    targetFormat.mSampleRate = 16000;
-    targetFormat.mFormatID = kAudioFormatLinearPCM;
-    targetFormat.mFormatFlags = kAudioFormatFlagsNativeEndian | kAudioFormatFlagIsPacked | kAudioFormatFlagIsSignedInteger | kAudioFormatFlagIsNonInterleaved;
-    targetFormat.mBytesPerPacket = 2;
-    targetFormat.mFramesPerPacket = 1;
-    targetFormat.mBytesPerFrame = 2;
-    targetFormat.mChannelsPerFrame = 1;
-    targetFormat.mBitsPerChannel = 16;
-    targetFormat.mReserved = 0;
-
-    return targetFormat;
 }
 
 #pragma mark - CALLBACKS

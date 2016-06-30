@@ -7,31 +7,16 @@
 //
 
 #import "AppDelegate.h"
-#import <NTSpeechRecognizer/NTSpeechRecognizer.h>
 
-@interface AppDelegate () <NTAudioSourceDelegate>
-
-@property (nonatomic, strong) NTMicrophoneAudioSource* source;
+@interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
 
-- (void)audioSource:(NTAudioSource*)audioSource didReadData:(NSData*)data
-{
-    NSLog(@"DATA %lu", (unsigned long)data.length);
-}
-
 - (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions
 {
     // Override point for customization after application launch.
-    // NTPocketSphinxDecoder* decoder = [NTPocketSphinxDecoder new];
-
-    self.source = [NTMicrophoneAudioSource new];
-
-    [self.source addDelegate:self];
-
-    [self.source start];
 
     return YES;
 }

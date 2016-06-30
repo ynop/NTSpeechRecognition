@@ -18,9 +18,15 @@
 
 - (instancetype)init
 {
+    return [self initWithFormat:[NTAudioSource monoPCM16kInt16]];
+}
+
+- (instancetype)initWithFormat:(AudioStreamBasicDescription)format
+{
     self = [super init];
     if (self) {
         _delegates = [NSHashTable weakObjectsHashTable];
+        _format = format;
 
         _started = NO;
         _suspended = NO;
@@ -66,6 +72,23 @@
     for (id<NTAudioSourceDelegate> delegate in self.delegates) {
         [delegate audioSource:self didReadData:data];
     }
+}
+
+#pragma mark - Formats
++ (AudioStreamBasicDescription)monoPCM16kInt16
+{
+    AudioStreamBasicDescription targetFormat;
+    targetFormat.mSampleRate = 16000;
+    targetFormat.mFormatID = kAudioFormatLinearPCM;
+    targetFormat.mFormatFlags = kAudioFormatFlagsNativeEndian | kAudioFormatFlagIsPacked | kAudioFormatFlagIsSignedInteger | kAudioFormatFlagIsNonInterleaved;
+    targetFormat.mBytesPerPacket = 2;
+    targetFormat.mFramesPerPacket = 1;
+    targetFormat.mBytesPerFrame = 2;
+    targetFormat.mChannelsPerFrame = 1;
+    targetFormat.mBitsPerChannel = 16;
+    targetFormat.mReserved = 0;
+
+    return targetFormat;
 }
 
 @end

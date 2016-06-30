@@ -7,14 +7,10 @@
 //
 
 #import "NTAudioSource.h"
-#import <AVFoundation/AVFoundation.h>
 
+/*!
+ *  Audio source that reads data from default input device.
+ */
 @interface NTMicrophoneAudioSource : NTAudioSource
-
-@property (nonatomic, readonly) AudioStreamBasicDescription format;
-
-- (instancetype)init;
-
-- (instancetype)initWithFormat:(AudioStreamBasicDescription)format;
 
 @end

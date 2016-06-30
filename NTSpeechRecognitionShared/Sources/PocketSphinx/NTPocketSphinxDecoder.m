@@ -229,6 +229,11 @@
     return self.internalSearches[name];
 }
 
+- (NSArray<NTSpeechSearch*>*)searches
+{
+    return [NSArray arrayWithArray:self.internalSearches.allValues];
+}
+
 #pragma mark - Processing
 - (BOOL)startUtterance
 {
@@ -272,7 +277,12 @@
     SInt32 psScore = 0;
     const char* cValue = ps_get_hyp(self.decoder, &psScore);
 
-    NSString* value = [NSString stringWithCString:cValue encoding:NSUTF8StringEncoding];
+    NSString* value = @"";
+
+    if (cValue != NULL) {
+        value = [NSString stringWithCString:cValue encoding:NSUTF8StringEncoding];
+    }
+
     double score = pow(10.0, psScore);
 
     SInt32 prob = ps_get_prob(self.decoder);
