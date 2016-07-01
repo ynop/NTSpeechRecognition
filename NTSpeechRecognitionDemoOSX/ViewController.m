@@ -9,13 +9,14 @@
 #import "ViewController.h"
 #import <NTSpeechRecognition/NTSpeechRecognition.h>
 
-@interface ViewController () <NTSpeechRecognizerDelegate>
+@interface ViewController () <NTSpeechRecognizerDelegate, NSTableViewDelegate, NSTableViewDataSource>
 
 @property (weak) IBOutlet NSButtonCell* startButton;
 @property (weak) IBOutlet NSButton* suspendButton;
 @property (weak) IBOutlet NSTextField* statusLabel;
 @property (unsafe_unretained) IBOutlet NSTextView* hypothesesArea;
 @property (weak) IBOutlet NSButton* returnNullHypsCheckBox;
+@property (weak) IBOutlet NSButton* returnPartialHypsCheckBox;
 
 @property (nonatomic, strong) NTPocketSphinxRecognizer* recognizer;
 @property (nonatomic, strong) NTMicrophoneAudioSource* source;
@@ -30,6 +31,8 @@
 @property (nonatomic, strong) NTPronunciationDictionary* dictionary;
 
 @property (nonatomic, strong) NSMutableArray* lastHyps;
+
+@property (weak) IBOutlet NSTableView* searchesTable;
 
 @end
 
@@ -138,6 +141,11 @@
     self.recognizer.returnNullHypotheses = (self.returnNullHypsCheckBox.state == NSOnState);
 }
 
+- (IBAction)setReturnPartialHypotheses:(id)sender
+{
+    self.recognizer.returnPartialHypotheses = (self.returnPartialHypsCheckBox.state == NSOnState);
+}
+
 #pragma mark - Speech Recognizer Delegate
 - (void)speechRecognizer:(id<NTSpeechRecognizer>)speechRecognizer didReceiveHypothesis:(NTHypothesis*)hypothesis forSearch:(NTSpeechSearch*)search
 {
@@ -147,6 +155,26 @@
         }
 
         [self.lastHyps addObject:[NSString stringWithFormat:@"%@ (%f)", hypothesis.value, hypothesis.posteriorProbability]];
+
+        NSString* all = @"";
+
+        for (NSString* hyp in self.lastHyps) {
+            all = [all stringByAppendingFormat:@"%@\n", hyp];
+        }
+
+        self.hypothesesArea.string = all;
+
+    });
+}
+
+- (void)speechRecognizer:(id<NTSpeechRecognizer>)speechRecognizer didReceivePartialHypothesis:(NTHypothesis*)hypothesis forSearch:(NTSpeechSearch*)search
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if (self.lastHyps.count >= 20) {
+            [self.lastHyps removeObjectAtIndex:0];
+        }
+
+        [self.lastHyps addObject:[NSString stringWithFormat:@"PARTIAL %@ (%f)", hypothesis.value, hypothesis.posteriorProbability]];
 
         NSString* all = @"";
 
@@ -175,6 +203,27 @@
         }
 
     });
+}
+
+#pragma mark - TableView
+- (NSInteger)numberOfRowsInTableView:(NSTableView*)tableView
+{
+    return self.recognizer.searches.count;
+}
+
+- (id)tableView:(NSTableView*)tableView objectValueForTableColumn:(NSTableColumn*)tableColumn row:(NSInteger)row
+{
+    NTSpeechSearch* search = self.recognizer.searches[row];
+
+    return search.name;
+}
+
+- (BOOL)tableView:(NSTableView*)tableView shouldSelectRow:(NSInteger)row
+{
+    NTSpeechSearch* search = self.recognizer.searches[row];
+    [self.recognizer setActiveSearchByName:search.name];
+
+    return YES;
 }
 
 @end

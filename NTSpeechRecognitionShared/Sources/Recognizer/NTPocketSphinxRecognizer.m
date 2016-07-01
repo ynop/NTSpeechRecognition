@@ -40,6 +40,7 @@
 @synthesize isStarted = _isStarted;
 @synthesize isSuspended = _isSuspended;
 @synthesize returnNullHypotheses = _returnNullHypotheses;
+@synthesize returnPartialHypotheses = _returnPartialHypotheses;
 
 - (instancetype)init
 {
@@ -199,7 +200,7 @@
             self.timeSinceSilenceStarted += duration;
         }
 
-        // DETERMINE IF END OF UTTERANCE
+        // END UTTERANCE WHEN PAUSE DETECTED
         if (self.speechDetectedWithinUtterance && self.timeSinceSilenceStarted >= self.pauseThreshold) {
             [self.decoder endUtterance];
             [self resetStateForDecoding];
@@ -210,6 +211,14 @@
 
             if (self.returnNullHypotheses || ![hyp isNull]) {
                 [self notifyHypothesisReceived:hyp];
+            }
+        }
+        // OTHERWISE RETURN PARTIAL HYP IF THERE WAS SPEECH IN THIS DATA CHUNK
+        else if (containsSpeech && self.returnPartialHypotheses) {
+            NTHypothesis* hyp = [self.decoder getHypothesis];
+
+            if (self.returnNullHypotheses || ![hyp isNull]) {
+                [self notifyPartialHypothesisReceived:hyp];
             }
         }
     }
@@ -331,6 +340,13 @@
 {
     for (id<NTSpeechRecognizerDelegate> delegate in self.delegates) {
         [delegate speechRecognizer:self didReceiveHypothesis:hyp forSearch:self.activeSearch];
+    }
+}
+
+- (void)notifyPartialHypothesisReceived:(NTHypothesis*)hyp
+{
+    for (id<NTSpeechRecognizerDelegate> delegate in self.delegates) {
+        [delegate speechRecognizer:self didReceivePartialHypothesis:hyp forSearch:self.activeSearch];
     }
 }
 

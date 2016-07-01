@@ -29,13 +29,22 @@
 - (void)speechRecognizer:(id<NTSpeechRecognizer>)speechRecognizer didChangeListeningState:(BOOL)isListening;
 
 /*!
- *  Is called when recognizer found a hypothesis.
+ *  Is called when recognizer detected the end of utterance and received a hypothesis.
  *
  *  @param speechRecognizer The recognizer that found the hyp.
  *  @param hypothesis       The found hypothesis.
  *  @param search           The search which was active when the hyp was recognized.
  */
 - (void)speechRecognizer:(id<NTSpeechRecognizer>)speechRecognizer didReceiveHypothesis:(NTHypothesis*)hypothesis forSearch:(NTSpeechSearch*)search;
+
+/*!
+ *  Is called when recognizer found speech and received a hypothesis.
+ *
+ *  @param speechRecognizer The recognizer that found the hyp.
+ *  @param hypothesis       The found hypothesis.
+ *  @param search           The search which was active when the hyp was recognized.
+ */
+- (void)speechRecognizer:(id<NTSpeechRecognizer>)speechRecognizer didReceivePartialHypothesis:(NTHypothesis*)hypothesis forSearch:(NTSpeechSearch*)search;
 
 @end
 
@@ -85,6 +94,11 @@
  *  Whether the recognizer should notify about NULL Hypotheses.
  */
 @property (nonatomic) BOOL returnNullHypotheses;
+
+/*!
+ *  If enabled the recognizer returns partial hypotheses (Hyoptheses, when the end of the utterance wasn't detected)
+ */
+@property (nonatomic) BOOL returnPartialHypotheses;
 
 #pragma mark - Init
 /*!
