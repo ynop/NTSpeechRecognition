@@ -25,7 +25,7 @@
 @property (nonatomic, strong) NTJsgfFileSearch* dateSearch;
 @property (nonatomic, strong) NTJsgfFileSearch* yesNoSearch;
 @property (nonatomic, strong) NTJsgfFileSearch* icaoSearch;
-
+@property (nonatomic, strong) NTKeywordSpottingSearch* commandSearch;
 @property (nonatomic, strong) NTNGramFileSearch* controlSearch;
 
 @property (nonatomic, strong) NTPronunciationDictionary* dictionary;
@@ -58,6 +58,7 @@
     self.yesNoSearch = [NTJsgfFileSearch searchWithName:@"Yes_No" path:[[NSBundle mainBundle] pathForResource:@"yes_no" ofType:@".jsgf"]];
     self.icaoSearch = [NTJsgfFileSearch searchWithName:@"ICAO" path:[[NSBundle mainBundle] pathForResource:@"icao_single" ofType:@".jsgf"]];
     self.controlSearch = [NTNGramFileSearch searchWithName:@"Control" path:[[NSBundle mainBundle] pathForResource:@"control" ofType:@".lm"]];
+    self.commandSearch = [NTKeywordSpottingSearch searchWithName:@"Commands" andKeywordsFromFileAtPath:[[NSBundle mainBundle] pathForResource:@"commands" ofType:@".kws"]];
 
     // CREATE DICTIONARY
     self.dictionary = [[NTPronunciationDictionary alloc] initWithName:@"Default"];
@@ -66,6 +67,7 @@
     [self.dictionary loadWordsFromFileAtPath:[[NSBundle mainBundle] pathForResource:@"yes_no" ofType:@".dic"]];
     [self.dictionary loadWordsFromFileAtPath:[[NSBundle mainBundle] pathForResource:@"icao_single" ofType:@".dic"]];
     [self.dictionary loadWordsFromFileAtPath:[[NSBundle mainBundle] pathForResource:@"control" ofType:@".dic"]];
+    [self.dictionary loadWordsFromFileAtPath:[[NSBundle mainBundle] pathForResource:@"commands" ofType:@".dic"]];
 
     // ADD DICTIONARY AND SEARCH
     [self.recognizer loadPronunciationDictioanry:self.dictionary];
@@ -74,6 +76,7 @@
     [self.recognizer addSearch:self.yesNoSearch];
     [self.recognizer addSearch:self.icaoSearch];
     [self.recognizer addSearch:self.controlSearch];
+    [self.recognizer addSearch:self.commandSearch];
 }
 
 - (void)setRepresentedObject:(id)representedObject
@@ -109,31 +112,6 @@
         [self.source resume];
         self.suspendButton.title = @"Resume";
     }
-}
-
-- (IBAction)setGrammarNumbers:(id)sender
-{
-    [self.recognizer setActiveSearchByName:self.numbersSearch.name];
-}
-
-- (IBAction)setGrammarDate:(id)sender
-{
-    [self.recognizer setActiveSearchByName:self.dateSearch.name];
-}
-
-- (IBAction)setGrammarYesNo:(id)sender
-{
-    [self.recognizer setActiveSearchByName:self.yesNoSearch.name];
-}
-
-- (IBAction)setGrammarIcao:(id)sender
-{
-    [self.recognizer setActiveSearchByName:self.icaoSearch.name];
-}
-
-- (IBAction)setLmControl:(id)sender
-{
-    [self.recognizer setActiveSearchByName:self.controlSearch.name];
 }
 
 - (IBAction)setReturnNullHypotheses:(id)sender

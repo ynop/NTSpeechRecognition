@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UIButton* suspendButton;
 @property (weak, nonatomic) IBOutlet UILabel* statusLabel;
 @property (weak, nonatomic) IBOutlet UISwitch* nullHypSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch* partHypSwitch;
 @property (weak, nonatomic) IBOutlet UITextView* hypField;
 @property (weak, nonatomic) IBOutlet UITableView* searchesTable;
 
@@ -25,7 +26,7 @@
 @property (nonatomic, strong) NTJsgfFileSearch* dateSearch;
 @property (nonatomic, strong) NTJsgfFileSearch* yesNoSearch;
 @property (nonatomic, strong) NTJsgfFileSearch* icaoSearch;
-
+@property (nonatomic, strong) NTKeywordSpottingSearch* commandSearch;
 @property (nonatomic, strong) NTNGramFileSearch* controlSearch;
 
 @property (nonatomic, strong) NTPronunciationDictionary* dictionary;
@@ -54,6 +55,7 @@
     self.yesNoSearch = [NTJsgfFileSearch searchWithName:@"Yes_No" path:[[NSBundle mainBundle] pathForResource:@"yes_no" ofType:@".jsgf"]];
     self.icaoSearch = [NTJsgfFileSearch searchWithName:@"ICAO" path:[[NSBundle mainBundle] pathForResource:@"icao_single" ofType:@".jsgf"]];
     self.controlSearch = [NTNGramFileSearch searchWithName:@"Control" path:[[NSBundle mainBundle] pathForResource:@"control" ofType:@".lm"]];
+    self.commandSearch = [NTKeywordSpottingSearch searchWithName:@"Commands" andKeywordsFromFileAtPath:[[NSBundle mainBundle] pathForResource:@"commands" ofType:@".kws"]];
 
     // CREATE DICTIONARY
     self.dictionary = [[NTPronunciationDictionary alloc] initWithName:@"Default"];
@@ -62,6 +64,7 @@
     [self.dictionary loadWordsFromFileAtPath:[[NSBundle mainBundle] pathForResource:@"yes_no" ofType:@".dic"]];
     [self.dictionary loadWordsFromFileAtPath:[[NSBundle mainBundle] pathForResource:@"icao_single" ofType:@".dic"]];
     [self.dictionary loadWordsFromFileAtPath:[[NSBundle mainBundle] pathForResource:@"control" ofType:@".dic"]];
+    [self.dictionary loadWordsFromFileAtPath:[[NSBundle mainBundle] pathForResource:@"commands" ofType:@".dic"]];
 
     // ADD DICTIONARY AND SEARCH
     [self.recognizer loadPronunciationDictioanry:self.dictionary];
@@ -70,7 +73,8 @@
     [self.recognizer addSearch:self.yesNoSearch];
     [self.recognizer addSearch:self.icaoSearch];
     [self.recognizer addSearch:self.controlSearch];
-    
+    [self.recognizer addSearch:self.commandSearch];
+
     [self.searchesTable reloadData];
     self.hypField.text = @"";
 }
@@ -112,6 +116,11 @@
 - (IBAction)setReturnNullHyps:(id)sender
 {
     self.recognizer.returnNullHypotheses = self.nullHypSwitch.on;
+}
+
+- (IBAction)setReturnPartialHyps:(id)sender
+{
+    self.recognizer.returnPartialHypotheses = self.partHypSwitch.on;
 }
 
 #pragma mark - Speech Recognizer Delegate
@@ -167,25 +176,24 @@
 - (UITableViewCell*)tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath*)indexPath
 {
     static NSString* CellIdentifier = @"cell";
-    
+
     UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
+
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
-    
+
     cell.textLabel.text = self.recognizer.searches[indexPath.row].name;
-    
+
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath*)indexPath
 {
     if (indexPath.row < self.recognizer.searches.count) {
-        NTSpeechSearch *search = self.recognizer.searches[indexPath.row];
-        
+        NTSpeechSearch* search = self.recognizer.searches[indexPath.row];
+
         [self.recognizer setActiveSearchByName:search.name];
-        
     }
 }
 
