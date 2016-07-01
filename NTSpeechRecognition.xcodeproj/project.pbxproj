@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A960E89E1D26930200E20C7E /* commands.dic in Resources */ = {isa = PBXBuildFile; fileRef = A960E89C1D26930200E20C7E /* commands.dic */; };
+		A960E89F1D26930200E20C7E /* commands.kws in Resources */ = {isa = PBXBuildFile; fileRef = A960E89D1D26930200E20C7E /* commands.kws */; };
 		A99656171D2551D500120D06 /* date.dic in Resources */ = {isa = PBXBuildFile; fileRef = A996560F1D2551D500120D06 /* date.dic */; };
 		A99656181D2551D500120D06 /* date.jsgf in Resources */ = {isa = PBXBuildFile; fileRef = A99656101D2551D500120D06 /* date.jsgf */; };
 		A99656191D2551D500120D06 /* icao_single.dic in Resources */ = {isa = PBXBuildFile; fileRef = A99656111D2551D500120D06 /* icao_single.dic */; };
@@ -31,6 +33,7 @@
 		A99656411D2582EF00120D06 /* control.lm in Resources */ = {isa = PBXBuildFile; fileRef = A996562E1D25829F00120D06 /* control.lm */; };
 		A99656431D2659BE00120D06 /* commands.kws in Resources */ = {isa = PBXBuildFile; fileRef = A99656421D2659BE00120D06 /* commands.kws */; };
 		A99656451D265A2900120D06 /* commands.dic in Resources */ = {isa = PBXBuildFile; fileRef = A99656441D265A2900120D06 /* commands.dic */; };
+		A99656461D26916900120D06 /* NTSpeechTools.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A9F508E71D1AC23C00498B4E /* NTSpeechTools.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A99C2A7D1D216308001FA630 /* cmdln_macro.h in Headers */ = {isa = PBXBuildFile; fileRef = A99C2A2D1D216308001FA630 /* cmdln_macro.h */; };
 		A99C2A7E1D216308001FA630 /* cmdln_macro.h in Headers */ = {isa = PBXBuildFile; fileRef = A99C2A2D1D216308001FA630 /* cmdln_macro.h */; };
 		A99C2A7F1D216308001FA630 /* pocketsphinx.h in Headers */ = {isa = PBXBuildFile; fileRef = A99C2A2E1D216308001FA630 /* pocketsphinx.h */; };
@@ -199,6 +202,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				A9F506E81D195ED300498B4E /* NTSpeechRecognition.framework in Embed Frameworks */,
+				A99656461D26916900120D06 /* NTSpeechTools.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -206,6 +210,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A960E89C1D26930200E20C7E /* commands.dic */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = commands.dic; sourceTree = "<group>"; };
+		A960E89D1D26930200E20C7E /* commands.kws */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = commands.kws; sourceTree = "<group>"; };
 		A996560F1D2551D500120D06 /* date.dic */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = date.dic; sourceTree = "<group>"; };
 		A99656101D2551D500120D06 /* date.jsgf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = date.jsgf; sourceTree = "<group>"; };
 		A99656111D2551D500120D06 /* icao_single.dic */ = {isa = PBXFileReference; lastKnownFileType = text; path = icao_single.dic; sourceTree = "<group>"; };
@@ -388,6 +394,8 @@
 		A996562C1D25829F00120D06 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A960E89C1D26930200E20C7E /* commands.dic */,
+				A960E89D1D26930200E20C7E /* commands.kws */,
 				A996562D1D25829F00120D06 /* control.dic */,
 				A996562E1D25829F00120D06 /* control.lm */,
 				A996562F1D25829F00120D06 /* date.dic */,
@@ -954,7 +962,9 @@
 				A99656391D25829F00120D06 /* date.dic in Resources */,
 				A99656371D25829F00120D06 /* control.dic in Resources */,
 				A996563C1D25829F00120D06 /* icao_single.jsgf in Resources */,
+				A960E89E1D26930200E20C7E /* commands.dic in Resources */,
 				A99C2B3F1D21635D001FA630 /* LaunchScreen.storyboard in Resources */,
+				A960E89F1D26930200E20C7E /* commands.kws in Resources */,
 				A99656411D2582EF00120D06 /* control.lm in Resources */,
 				A996563B1D25829F00120D06 /* icao_single.dic in Resources */,
 			);

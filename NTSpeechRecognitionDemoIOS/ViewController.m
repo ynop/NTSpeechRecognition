@@ -104,12 +104,12 @@
     if (self.recognizer.isSuspended) {
         [self.recognizer resume];
         [self.source resume];
-        [self.startButton setTitle:@"Suspend" forState:UIControlStateNormal];
+        [self.suspendButton setTitle:@"Suspend" forState:UIControlStateNormal];
     }
     else {
         [self.recognizer suspend];
         [self.source resume];
-        [self.startButton setTitle:@"Resume" forState:UIControlStateNormal];
+        [self.suspendButton setTitle:@"Resume" forState:UIControlStateNormal];
     }
 }
 
@@ -132,6 +132,26 @@
         }
 
         [self.lastHyps addObject:[NSString stringWithFormat:@"%@ (%f)", hypothesis.value, hypothesis.posteriorProbability]];
+
+        NSString* all = @"";
+
+        for (NSString* hyp in self.lastHyps) {
+            all = [all stringByAppendingFormat:@"%@\n", hyp];
+        }
+
+        self.hypField.text = all;
+
+    });
+}
+
+- (void)speechRecognizer:(id<NTSpeechRecognizer>)speechRecognizer didReceivePartialHypothesis:(NTHypothesis*)hypothesis forSearch:(NTSpeechSearch*)search
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if (self.lastHyps.count >= 20) {
+            [self.lastHyps removeObjectAtIndex:0];
+        }
+
+        [self.lastHyps addObject:[NSString stringWithFormat:@"PARTIAL %@ (%f)", hypothesis.value, hypothesis.posteriorProbability]];
 
         NSString* all = @"";
 
