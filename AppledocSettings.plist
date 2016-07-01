@@ -4,7 +4,7 @@
 <plist version="1.0">
 <dict>
     <key>--project-name</key>
-    <string>NTSpeechTools</string>
+    <string>NTSpeechRecognition</string>
     <key>--project-company</key>
     <string>ZHAW Institute of applied Information Technology</string>
     <key>--company-id</key>
