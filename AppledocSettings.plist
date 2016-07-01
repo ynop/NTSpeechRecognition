@@ -26,6 +26,9 @@
     <array>
         <string>Documentation</string>
         <string>NTSpeechToolsTests</string>
+        <string>Carthage</string>
+        <string>NTSpeechRecognitionDemoIOS</string>
+        <string>NTSpeechRecognitionDemoOSX</string>
     </array>
 
 </dict>
