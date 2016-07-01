@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>ViewController Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">NTSpeechTools </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">ZHAW Institute of applied Information Technology</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/commandSearch">commandSearch</option>
+		
+		<option value="//api/name/controlSearch">controlSearch</option>
+		
+		<option value="//api/name/dateSearch">dateSearch</option>
+		
+		<option value="//api/name/dictionary">dictionary</option>
+		
+		<option value="//api/name/hypField">hypField</option>
+		
+		<option value="//api/name/hypothesesArea">hypothesesArea</option>
+		
+		<option value="//api/name/icaoSearch">icaoSearch</option>
+		
+		<option value="//api/name/lastHyps">lastHyps</option>
+		
+		<option value="//api/name/nullHypSwitch">nullHypSwitch</option>
+		
+		<option value="//api/name/numbersSearch">numbersSearch</option>
+		
+		<option value="//api/name/partHypSwitch">partHypSwitch</option>
+		
+		<option value="//api/name/recognizer">recognizer</option>
+		
+		<option value="//api/name/returnNullHypsCheckBox">returnNullHypsCheckBox</option>
+		
+		<option value="//api/name/returnPartialHypsCheckBox">returnPartialHypsCheckBox</option>
+		
+		<option value="//api/name/searchesTable">searchesTable</option>
+		
+		<option value="//api/name/source">source</option>
+		
+		<option value="//api/name/startButton">startButton</option>
+		
+		<option value="//api/name/statusLabel">statusLabel</option>
+		
+		<option value="//api/name/suspendButton">suspendButton</option>
+		
+		<option value="//api/name/yesNoSearch">yesNoSearch</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/didReceiveMemoryWarning">- didReceiveMemoryWarning</option>
+		
+		<option value="//api/name/numberOfRowsInTableView:">- numberOfRowsInTableView:</option>
+		
+		<option value="//api/name/numberOfSectionsInTableView:">- numberOfSectionsInTableView:</option>
+		
+		<option value="//api/name/setRepresentedObject:">- setRepresentedObject:</option>
+		
+		<option value="//api/name/setReturnNullHypotheses:">- setReturnNullHypotheses:</option>
+		
+		<option value="//api/name/setReturnNullHyps:">- setReturnNullHyps:</option>
+		
+		<option value="//api/name/setReturnPartialHypotheses:">- setReturnPartialHypotheses:</option>
+		
+		<option value="//api/name/setReturnPartialHyps:">- setReturnPartialHyps:</option>
+		
+		<option value="//api/name/speechRecognizer:didChangeListeningState:">- speechRecognizer:didChangeListeningState:</option>
+		
+		<option value="//api/name/speechRecognizer:didReceiveHypothesis:forSearch:">- speechRecognizer:didReceiveHypothesis:forSearch:</option>
+		
+		<option value="//api/name/speechRecognizer:didReceivePartialHypothesis:forSearch:">- speechRecognizer:didReceivePartialHypothesis:forSearch:</option>
+		
+		<option value="//api/name/start:">- start:</option>
+		
+		<option value="//api/name/startStop:">- startStop:</option>
+		
+		<option value="//api/name/suspend:">- suspend:</option>
+		
+		<option value="//api/name/suspendResume:">- suspendResume:</option>
+		
+		<option value="//api/name/tableView:cellForRowAtIndexPath:">- tableView:cellForRowAtIndexPath:</option>
+		
+		<option value="//api/name/tableView:didSelectRowAtIndexPath:">- tableView:didSelectRowAtIndexPath:</option>
+		
+		<option value="//api/name/tableView:numberOfRowsInSection:">- tableView:numberOfRowsInSection:</option>
+		
+		<option value="//api/name/tableView:objectValueForTableColumn:row:">- tableView:objectValueForTableColumn:row:</option>
+		
+		<option value="//api/name/tableView:shouldSelectRow:">- tableView:shouldSelectRow:</option>
+		
+		<option value="//api/name/viewDidLoad">- viewDidLoad</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">ViewController Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>UIViewController</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>ViewController.h<br />ViewController.m</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/viewDidLoad" title="viewDidLoad"></a>
+	<h3 class="method-title"><code><a href="#//api/name/viewDidLoad">&ndash;&nbsp;viewDidLoad</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)viewDidLoad</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/didReceiveMemoryWarning" title="didReceiveMemoryWarning"></a>
+	<h3 class="method-title"><code><a href="#//api/name/didReceiveMemoryWarning">&ndash;&nbsp;didReceiveMemoryWarning</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)didReceiveMemoryWarning</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/startStop:" title="startStop:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/startStop:">&ndash;&nbsp;startStop:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (IBAction)startStop:(id)<em>sender</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/suspendResume:" title="suspendResume:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/suspendResume:">&ndash;&nbsp;suspendResume:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (IBAction)suspendResume:(id)<em>sender</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setReturnNullHyps:" title="setReturnNullHyps:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setReturnNullHyps:">&ndash;&nbsp;setReturnNullHyps:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (IBAction)setReturnNullHyps:(id)<em>sender</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setReturnPartialHyps:" title="setReturnPartialHyps:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setReturnPartialHyps:">&ndash;&nbsp;setReturnPartialHyps:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (IBAction)setReturnPartialHyps:(id)<em>sender</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/speechRecognizer:didReceiveHypothesis:forSearch:" title="speechRecognizer:didReceiveHypothesis:forSearch:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/speechRecognizer:didReceiveHypothesis:forSearch:">&ndash;&nbsp;speechRecognizer:didReceiveHypothesis:forSearch:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)speechRecognizer:(id&lt;NTSpeechRecognizer&gt;)<em>speechRecognizer</em> didReceiveHypothesis:(NTHypothesis *)<em>hypothesis</em> forSearch:(NTSpeechSearch *)<em>search</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/speechRecognizer:didChangeListeningState:" title="speechRecognizer:didChangeListeningState:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/speechRecognizer:didChangeListeningState:">&ndash;&nbsp;speechRecognizer:didChangeListeningState:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)speechRecognizer:(id&lt;NTSpeechRecognizer&gt;)<em>speechRecognizer</em> didChangeListeningState:(BOOL)<em>isListening</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/numberOfSectionsInTableView:" title="numberOfSectionsInTableView:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/numberOfSectionsInTableView:">&ndash;&nbsp;numberOfSectionsInTableView:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSInteger)numberOfSectionsInTableView:(UITableView *)<em>tableView</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/tableView:numberOfRowsInSection:" title="tableView:numberOfRowsInSection:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/tableView:numberOfRowsInSection:">&ndash;&nbsp;tableView:numberOfRowsInSection:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSInteger)tableView:(UITableView *)<em>tableView</em> numberOfRowsInSection:(NSInteger)<em>section</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/tableView:cellForRowAtIndexPath:" title="tableView:cellForRowAtIndexPath:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/tableView:cellForRowAtIndexPath:">&ndash;&nbsp;tableView:cellForRowAtIndexPath:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (UITableViewCell *)tableView:(UITableView *)<em>tableView</em> cellForRowAtIndexPath:(NSIndexPath *)<em>indexPath</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/tableView:didSelectRowAtIndexPath:" title="tableView:didSelectRowAtIndexPath:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/tableView:didSelectRowAtIndexPath:">&ndash;&nbsp;tableView:didSelectRowAtIndexPath:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)tableView:(UITableView *)<em>tableView</em> didSelectRowAtIndexPath:(NSIndexPath *)<em>indexPath</em></code></div>
+
+		    
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/setRepresentedObject:" title="setRepresentedObject:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setRepresentedObject:">&ndash;&nbsp;setRepresentedObject:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)setRepresentedObject:(id)<em>representedObject</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/start:" title="start:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/start:">&ndash;&nbsp;start:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (IBAction)start:(id)<em>sender</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/suspend:" title="suspend:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/suspend:">&ndash;&nbsp;suspend:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (IBAction)suspend:(id)<em>sender</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setReturnNullHypotheses:" title="setReturnNullHypotheses:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setReturnNullHypotheses:">&ndash;&nbsp;setReturnNullHypotheses:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (IBAction)setReturnNullHypotheses:(id)<em>sender</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setReturnPartialHypotheses:" title="setReturnPartialHypotheses:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setReturnPartialHypotheses:">&ndash;&nbsp;setReturnPartialHypotheses:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (IBAction)setReturnPartialHypotheses:(id)<em>sender</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/speechRecognizer:didReceivePartialHypothesis:forSearch:" title="speechRecognizer:didReceivePartialHypothesis:forSearch:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/speechRecognizer:didReceivePartialHypothesis:forSearch:">&ndash;&nbsp;speechRecognizer:didReceivePartialHypothesis:forSearch:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)speechRecognizer:(id&lt;NTSpeechRecognizer&gt;)<em>speechRecognizer</em> didReceivePartialHypothesis:(NTHypothesis *)<em>hypothesis</em> forSearch:(NTSpeechSearch *)<em>search</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/numberOfRowsInTableView:" title="numberOfRowsInTableView:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/numberOfRowsInTableView:">&ndash;&nbsp;numberOfRowsInTableView:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSInteger)numberOfRowsInTableView:(NSTableView *)<em>tableView</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/tableView:objectValueForTableColumn:row:" title="tableView:objectValueForTableColumn:row:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/tableView:objectValueForTableColumn:row:">&ndash;&nbsp;tableView:objectValueForTableColumn:row:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (id)tableView:(NSTableView *)<em>tableView</em> objectValueForTableColumn:(NSTableColumn *)<em>tableColumn</em> row:(NSInteger)<em>row</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/tableView:shouldSelectRow:" title="tableView:shouldSelectRow:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/tableView:shouldSelectRow:">&ndash;&nbsp;tableView:shouldSelectRow:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)tableView:(NSTableView *)<em>tableView</em> shouldSelectRow:(NSInteger)<em>row</em></code></div>
+
+		    
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Extension Methods" name="task_Extension Methods"></a>
+						<h2 class="task-title">Extension Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/startButton" title="startButton"></a>
+	<h3 class="method-title"><code><a href="#//api/name/startButton">&nbsp;&nbsp;startButton</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (weak, nonatomic) IBOutlet UIButton *startButton</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/suspendButton" title="suspendButton"></a>
+	<h3 class="method-title"><code><a href="#//api/name/suspendButton">&nbsp;&nbsp;suspendButton</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (weak, nonatomic) IBOutlet UIButton *suspendButton</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/statusLabel" title="statusLabel"></a>
+	<h3 class="method-title"><code><a href="#//api/name/statusLabel">&nbsp;&nbsp;statusLabel</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (weak, nonatomic) IBOutlet UILabel *statusLabel</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/nullHypSwitch" title="nullHypSwitch"></a>
+	<h3 class="method-title"><code><a href="#//api/name/nullHypSwitch">&nbsp;&nbsp;nullHypSwitch</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (weak, nonatomic) IBOutlet UISwitch *nullHypSwitch</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/partHypSwitch" title="partHypSwitch"></a>
+	<h3 class="method-title"><code><a href="#//api/name/partHypSwitch">&nbsp;&nbsp;partHypSwitch</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (weak, nonatomic) IBOutlet UISwitch *partHypSwitch</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/hypField" title="hypField"></a>
+	<h3 class="method-title"><code><a href="#//api/name/hypField">&nbsp;&nbsp;hypField</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (weak, nonatomic) IBOutlet UITextView *hypField</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/searchesTable" title="searchesTable"></a>
+	<h3 class="method-title"><code><a href="#//api/name/searchesTable">&nbsp;&nbsp;searchesTable</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (weak, nonatomic) IBOutlet UITableView *searchesTable</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/recognizer" title="recognizer"></a>
+	<h3 class="method-title"><code><a href="#//api/name/recognizer">&nbsp;&nbsp;recognizer</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NTPocketSphinxRecognizer *recognizer</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/source" title="source"></a>
+	<h3 class="method-title"><code><a href="#//api/name/source">&nbsp;&nbsp;source</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NTMicrophoneAudioSource *source</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/numbersSearch" title="numbersSearch"></a>
+	<h3 class="method-title"><code><a href="#//api/name/numbersSearch">&nbsp;&nbsp;numbersSearch</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NTJsgfFileSearch *numbersSearch</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/dateSearch" title="dateSearch"></a>
+	<h3 class="method-title"><code><a href="#//api/name/dateSearch">&nbsp;&nbsp;dateSearch</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NTJsgfFileSearch *dateSearch</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/yesNoSearch" title="yesNoSearch"></a>
+	<h3 class="method-title"><code><a href="#//api/name/yesNoSearch">&nbsp;&nbsp;yesNoSearch</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NTJsgfFileSearch *yesNoSearch</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/icaoSearch" title="icaoSearch"></a>
+	<h3 class="method-title"><code><a href="#//api/name/icaoSearch">&nbsp;&nbsp;icaoSearch</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NTJsgfFileSearch *icaoSearch</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/commandSearch" title="commandSearch"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandSearch">&nbsp;&nbsp;commandSearch</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NTKeywordSpottingSearch *commandSearch</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/controlSearch" title="controlSearch"></a>
+	<h3 class="method-title"><code><a href="#//api/name/controlSearch">&nbsp;&nbsp;controlSearch</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NTNGramFileSearch *controlSearch</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/dictionary" title="dictionary"></a>
+	<h3 class="method-title"><code><a href="#//api/name/dictionary">&nbsp;&nbsp;dictionary</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NTPronunciationDictionary *dictionary</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/lastHyps" title="lastHyps"></a>
+	<h3 class="method-title"><code><a href="#//api/name/lastHyps">&nbsp;&nbsp;lastHyps</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSMutableArray *lastHyps</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/hypothesesArea" title="hypothesesArea"></a>
+	<h3 class="method-title"><code><a href="#//api/name/hypothesesArea">&nbsp;&nbsp;hypothesesArea</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (unsafe_unretained) IBOutlet NSTextView *hypothesesArea</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/returnNullHypsCheckBox" title="returnNullHypsCheckBox"></a>
+	<h3 class="method-title"><code><a href="#//api/name/returnNullHypsCheckBox">&nbsp;&nbsp;returnNullHypsCheckBox</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (weak) IBOutlet NSButton *returnNullHypsCheckBox</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/returnPartialHypsCheckBox" title="returnPartialHypsCheckBox"></a>
+	<h3 class="method-title"><code><a href="#//api/name/returnPartialHypsCheckBox">&nbsp;&nbsp;returnPartialHypsCheckBox</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (weak) IBOutlet NSButton *returnPartialHypsCheckBox</code></div>
+
+		    
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2016 ZHAW Institute of applied Information Technology. All rights reserved. Updated: 2016-07-01</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

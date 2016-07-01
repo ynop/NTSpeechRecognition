@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>NTKeywordSpottingSearch Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">NTSpeechTools </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">ZHAW Institute of applied Information Technology</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/keywords">keywords</option>
+		
+		<option value="//api/name/keywordsInternal">keywordsInternal</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/parseKeywordsFromFileAtPath:">+ parseKeywordsFromFileAtPath:</option>
+		
+		<option value="//api/name/parseKeywordsFromString:">+ parseKeywordsFromString:</option>
+		
+		<option value="//api/name/searchWithName:andKeywordsFromFileAtPath:">+ searchWithName:andKeywordsFromFileAtPath:</option>
+		
+		<option value="//api/name/searchWithName:keyword:">+ searchWithName:keyword:</option>
+		
+		<option value="//api/name/searchWithName:keyword:threshold:">+ searchWithName:keyword:threshold:</option>
+		
+		<option value="//api/name/searchWithName:keywords:">+ searchWithName:keywords:</option>
+		
+		<option value="//api/name/searchWithName:keywordsAndThresholds:">+ searchWithName:keywordsAndThresholds:</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/addKeyword:">- addKeyword:</option>
+		
+		<option value="//api/name/addKeyword:withThreshold:">- addKeyword:withThreshold:</option>
+		
+		<option value="//api/name/addKeywords:">- addKeywords:</option>
+		
+		<option value="//api/name/addKeywordsFromDictionary:">- addKeywordsFromDictionary:</option>
+		
+		<option value="//api/name/addKeywordsFromFileAtPath:">- addKeywordsFromFileAtPath:</option>
+		
+		<option value="//api/name/copyWithZone:">- copyWithZone:</option>
+		
+		<option value="//api/name/initWithName:">- initWithName:</option>
+		
+		<option value="//api/name/initWithName:keywords:">- initWithName:keywords:</option>
+		
+		<option value="//api/name/removeKeyword:">- removeKeyword:</option>
+		
+		<option value="//api/name/saveToFileAtPath:">- saveToFileAtPath:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">NTKeywordSpottingSearch Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td><a href="../Classes/NTSpeechSearch.html">NTSpeechSearch</a> : NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>NTKeywordSpottingSearch.h<br />NTKeywordSpottingSearch.m</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>A search for trying to recognize one of the <a href="#//api/name/keywords">keywords</a> in a list.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/keywords" title="keywords"></a>
+	<h3 class="method-title"><code><a href="#//api/name/keywords">&nbsp;&nbsp;keywords</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Keyword / Threshold pairs</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) NSDictionary&lt;NSString*NSNumber*&gt; *keywords</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Keyword / Threshold pairs</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NTKeywordSpottingSearch.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithName:keywords:" title="initWithName:keywords:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithName:keywords:">&ndash;&nbsp;initWithName:keywords:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates new KWS search with the given name and the keywors.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithName:(NSString *)<em>name</em> keywords:(NSDictionary&lt;NSString*,NSNumber*&gt; *)<em>keywords</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>name</code></th>
+						<td><p>Name</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>keywords</code></th>
+						<td><p>Keyword/Threshold pairs</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>instance</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Creates new KWS search with the given name and the keywors.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NTKeywordSpottingSearch.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addKeyword:" title="addKeyword:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addKeyword:">&ndash;&nbsp;addKeyword:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Adds a keyword with the default threshold 1. If the keyword already is in the list threshold 1 is set.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)addKeyword:(NSString *)<em>keyword</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>keyword</code></th>
+						<td><p>Keyword</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Adds a keyword with the default threshold 1. If the keyword already is in the list threshold 1 is set.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NTKeywordSpottingSearch.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addKeyword:withThreshold:" title="addKeyword:withThreshold:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addKeyword:withThreshold:">&ndash;&nbsp;addKeyword:withThreshold:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Adds the keyword with the given threshold. If the keyword already is in the list the new threshold is set.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)addKeyword:(NSString *)<em>keyword</em> withThreshold:(double)<em>threshold</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>keyword</code></th>
+						<td><p>Keyword</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>threshold</code></th>
+						<td><p>Threshold</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Adds the keyword with the given threshold. If the keyword already is in the list the new threshold is set.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NTKeywordSpottingSearch.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addKeywords:" title="addKeywords:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addKeywords:">&ndash;&nbsp;addKeywords:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Add <a href="#//api/name/keywords">keywords</a> from array with default threshold 1. Same as calling addKeyword for all <a href="#//api/name/keywords">keywords</a> in the array.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)addKeywords:(NSArray&lt;NSString*&gt; *)<em>keywords</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>keywords</code></th>
+						<td><p>List of <a href="#//api/name/keywords">keywords</a></p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Add <a href="#//api/name/keywords">keywords</a> from array with default threshold 1. Same as calling addKeyword for all <a href="#//api/name/keywords">keywords</a> in the array.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NTKeywordSpottingSearch.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addKeywordsFromDictionary:" title="addKeywordsFromDictionary:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addKeywordsFromDictionary:">&ndash;&nbsp;addKeywordsFromDictionary:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Add <a href="#//api/name/keywords">keywords</a> with thresholds from dictionary. Same as calling addKeyword:withThreshold for all pairs in the dictionary.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)addKeywordsFromDictionary:(NSDictionary&lt;NSString*,NSNumber*&gt; *)<em>keywords</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>keywords</code></th>
+						<td><p>Keyword/Threshold pairs</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Add <a href="#//api/name/keywords">keywords</a> with thresholds from dictionary. Same as calling addKeyword:withThreshold for all pairs in the dictionary.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NTKeywordSpottingSearch.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeKeyword:" title="removeKeyword:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeKeyword:">&ndash;&nbsp;removeKeyword:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Removes the given keyword.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)removeKeyword:(NSString *)<em>keyword</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>keyword</code></th>
+						<td><p>Keyword to remove</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Removes the given keyword.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NTKeywordSpottingSearch.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/saveToFileAtPath:" title="saveToFileAtPath:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/saveToFileAtPath:">&ndash;&nbsp;saveToFileAtPath:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Saves the <a href="#//api/name/keywords">keywords</a> into the file at the given path.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)saveToFileAtPath:(NSString *)<em>path</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>path</code></th>
+						<td><p>Path</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Saves the <a href="#//api/name/keywords">keywords</a> into the file at the given path.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NTKeywordSpottingSearch.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addKeywordsFromFileAtPath:" title="addKeywordsFromFileAtPath:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addKeywordsFromFileAtPath:">&ndash;&nbsp;addKeywordsFromFileAtPath:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Add all <a href="#//api/name/keywords">keywords</a> from the file at the given path.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)addKeywordsFromFileAtPath:(NSString *)<em>path</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>path</code></th>
+						<td><p>path</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Add all <a href="#//api/name/keywords">keywords</a> from the file at the given path.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NTKeywordSpottingSearch.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/parseKeywordsFromFileAtPath:" title="parseKeywordsFromFileAtPath:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/parseKeywordsFromFileAtPath:">+&nbsp;parseKeywordsFromFileAtPath:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Parses <a href="#//api/name/keywords">keywords</a> and optionaly thresholds from file</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (NSDictionary&lt;NSString*,NSNumber*&gt; *)parseKeywordsFromFileAtPath:(NSString *)<em>path</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>path</code></th>
+						<td><p>Path</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>keyword/threshold pairs</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Parses <a href="#//api/name/keywords">keywords</a> and optionaly thresholds from file</p>
+
+<p>KEYWORD /1e-10/
+KEYWORD2 /1e-40/</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NTKeywordSpottingSearch.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/searchWithName:keyword:" title="searchWithName:keyword:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/searchWithName:keyword:">+&nbsp;searchWithName:keyword:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Create a search with a single keyword.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (NTKeywordSpottingSearch *)searchWithName:(NSString *)<em>name</em> keyword:(NSString *)<em>keyword</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>keyword</code></th>
+						<td><p>Keyword</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>instance</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Create a search with a single keyword.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NTKeywordSpottingSearch.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/searchWithName:keyword:threshold:" title="searchWithName:keyword:threshold:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/searchWithName:keyword:threshold:">+&nbsp;searchWithName:keyword:threshold:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Create a search with a single keyword and a threshold.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (NTKeywordSpottingSearch *)searchWithName:(NSString *)<em>name</em> keyword:(NSString *)<em>keyword</em> threshold:(double)<em>threshold</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>keyword</code></th>
+						<td><p>Keyword</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>threshold</code></th>
+						<td><p>Threshold</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>instance</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Create a search with a single keyword and a threshold.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NTKeywordSpottingSearch.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/searchWithName:keywords:" title="searchWithName:keywords:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/searchWithName:keywords:">+&nbsp;searchWithName:keywords:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Create a search with <a href="#//api/name/keywords">keywords</a> from an array.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (NTKeywordSpottingSearch *)searchWithName:(NSString *)<em>name</em> keywords:(NSArray&lt;NSString*&gt; *)<em>keywords</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>keywords</code></th>
+						<td><p>List of <a href="#//api/name/keywords">keywords</a></p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>instance</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Create a search with <a href="#//api/name/keywords">keywords</a> from an array.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NTKeywordSpottingSearch.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/searchWithName:keywordsAndThresholds:" title="searchWithName:keywordsAndThresholds:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/searchWithName:keywordsAndThresholds:">+&nbsp;searchWithName:keywordsAndThresholds:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Create a search with <a href="#//api/name/keywords">keywords</a> and thresholds from a dictionary.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (NTKeywordSpottingSearch *)searchWithName:(NSString *)<em>name</em> keywordsAndThresholds:(NSDictionary&lt;NSString*,NSNumber*&gt; *)<em>keywords</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>keywords</code></th>
+						<td><p>Keyword/Threshold pairs</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>instance</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Create a search with <a href="#//api/name/keywords">keywords</a> and thresholds from a dictionary.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NTKeywordSpottingSearch.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/searchWithName:andKeywordsFromFileAtPath:" title="searchWithName:andKeywordsFromFileAtPath:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/searchWithName:andKeywordsFromFileAtPath:">+&nbsp;searchWithName:andKeywordsFromFileAtPath:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates a search with the <a href="#//api/name/keywords">keywords</a> from a file.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (NTKeywordSpottingSearch *)searchWithName:(NSString *)<em>name</em> andKeywordsFromFileAtPath:(NSString *)<em>path</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>path</code></th>
+						<td><p>Path to the file</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Creates a search with the <a href="#//api/name/keywords">keywords</a> from a file.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NTKeywordSpottingSearch.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/initWithName:" title="initWithName:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithName:">&ndash;&nbsp;initWithName:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates search with the given <a href="../Classes/NTSpeechSearch.html#//api/name/name">name</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithName:(NSString *)<em>name</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>name</code></th>
+						<td><p>Name</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Instance</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Creates search with the given <a href="../Classes/NTSpeechSearch.html#//api/name/name">name</a>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NTSpeechSearch.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/parseKeywordsFromString:" title="parseKeywordsFromString:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/parseKeywordsFromString:">+&nbsp;parseKeywordsFromString:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (NSDictionary&lt;NSString*,NSNumber*&gt; *)parseKeywordsFromString:(NSString *)<em>keywordString</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/copyWithZone:" title="copyWithZone:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/copyWithZone:">&ndash;&nbsp;copyWithZone:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (id)copyWithZone:(NSZone *)<em>zone</em></code></div>
+
+		    
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Extension Methods" name="task_Extension Methods"></a>
+						<h2 class="task-title">Extension Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/keywordsInternal" title="keywordsInternal"></a>
+	<h3 class="method-title"><code><a href="#//api/name/keywordsInternal">&nbsp;&nbsp;keywordsInternal</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSMutableDictionary *keywordsInternal</code></div>
+
+		    
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2016 ZHAW Institute of applied Information Technology. All rights reserved. Updated: 2016-07-01</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

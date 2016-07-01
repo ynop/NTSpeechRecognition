@@ -1,0 +1,1408 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>NTPronunciationDictionary Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">NTSpeechTools </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">ZHAW Institute of applied Information Technology</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/allWords">allWords</option>
+		
+		<option value="//api/name/entries">entries</option>
+		
+		<option value="//api/name/internalPhones">internalPhones</option>
+		
+		<option value="//api/name/name">name</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/addWord:listOfPhones:">- addWord:listOfPhones:</option>
+		
+		<option value="//api/name/addWord:phones:">- addWord:phones:</option>
+		
+		<option value="//api/name/addWords:">- addWords:</option>
+		
+		<option value="//api/name/addWordsFromDictionary:">- addWordsFromDictionary:</option>
+		
+		<option value="//api/name/copyWithZone:">- copyWithZone:</option>
+		
+		<option value="//api/name/createDictionaryString">- createDictionaryString</option>
+		
+		<option value="//api/name/init">- init</option>
+		
+		<option value="//api/name/initWithName:">- initWithName:</option>
+		
+		<option value="//api/name/initWithName:dictionaryString:">- initWithName:dictionaryString:</option>
+		
+		<option value="//api/name/initWithName:fileAtPath:">- initWithName:fileAtPath:</option>
+		
+		<option value="//api/name/initWithName:words:">- initWithName:words:</option>
+		
+		<option value="//api/name/loadWordsFromFileAtPath:">- loadWordsFromFileAtPath:</option>
+		
+		<option value="//api/name/parseWordsFromDictionaryString:">- parseWordsFromDictionaryString:</option>
+		
+		<option value="//api/name/phonesForWord:">- phonesForWord:</option>
+		
+		<option value="//api/name/removePhones:ofWord:">- removePhones:ofWord:</option>
+		
+		<option value="//api/name/removeWord:">- removeWord:</option>
+		
+		<option value="//api/name/writeToFileAtPath:">- writeToFileAtPath:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">NTPronunciationDictionary Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Conforms to</th>
+	<td>NSCopying</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>NTPronunciationDictionary.h<br />NTPronunciationDictionary.m</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>Represents a phonetic dictionary. Contains words with corresponding phones. One word can have multiple phones. Words and phones are stored in upper case.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/name" title="name"></a>
+	<h3 class="method-title"><code><a href="#//api/name/name">&nbsp;&nbsp;name</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The name identifying this dictionary.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSString *name</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The name identifying this dictionary.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NTPronunciationDictionary.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/entries" title="entries"></a>
+	<h3 class="method-title"><code><a href="#//api/name/entries">&nbsp;&nbsp;entries</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The list of words with the corresponding phones.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) NSDictionary *entries</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The list of words with the corresponding phones.</p>
+
+<p>Example:</p>
+
+<p>@{
+@&ldquo;word&rdquo; : @[ @&ldquo;phone a&rdquo;, @&ldquo;phone b&rdquo;, @&ldquo;phone c&rdquo;],
+@&ldquo;word b&rdquo; : @[ @&ldquo;phone ba&rdquo;, @&ldquo;phone bb&rdquo;,]
+}</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NTPronunciationDictionary.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/allWords" title="allWords"></a>
+	<h3 class="method-title"><code><a href="#//api/name/allWords">&nbsp;&nbsp;allWords</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>A list of words contained in the <a href="#//api/name/entries">entries</a>. (<a href="#//api/name/entries">entries</a>.allKeys)</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) NSArray *allWords</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>A list of words contained in the <a href="#//api/name/entries">entries</a>. (<a href="#//api/name/entries">entries</a>.allKeys)</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NTPronunciationDictionary.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/init" title="init"></a>
+	<h3 class="method-title"><code><a href="#//api/name/init">&ndash;&nbsp;init</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates a phonetic dictionary without <a href="#//api/name/entries">entries</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)init</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Empty Dictionary</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Creates a phonetic dictionary without <a href="#//api/name/entries">entries</a>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NTPronunciationDictionary.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithName:" title="initWithName:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithName:">&ndash;&nbsp;initWithName:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates a phonetic dictionary with a given <a href="#//api/name/name">name</a></p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithName:(NSString *)<em>name</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>name</code></th>
+						<td><p>Name</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Dictionary</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Creates a phonetic dictionary with a given <a href="#//api/name/name">name</a></p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NTPronunciationDictionary.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithName:fileAtPath:" title="initWithName:fileAtPath:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithName:fileAtPath:">&ndash;&nbsp;initWithName:fileAtPath:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates a phonetic dictionary with words loaded from a file.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithName:(NSString *)<em>name</em> fileAtPath:(NSString *)<em>path</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>name</code></th>
+						<td><p>Name</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>path</code></th>
+						<td><p>The path to the file with the words to load.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Dictionary</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Creates a phonetic dictionary with words loaded from a file.</p>
+
+<p>File format:</p>
+
+<p>[word]\t[phones]
+[wordb]\t[phonesb]
+<a href="1">wordb</a>\t[phonesb2]</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NTPronunciationDictionary.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithName:dictionaryString:" title="initWithName:dictionaryString:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithName:dictionaryString:">&ndash;&nbsp;initWithName:dictionaryString:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates a phonetic dictionary with words parsed from a string.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithName:(NSString *)<em>name</em> dictionaryString:(NSString *)<em>dictionaryString</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>name</code></th>
+						<td><p>Name</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>dictionaryString</code></th>
+						<td><p>String to parse words from</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Dictionary</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Creates a phonetic dictionary with words parsed from a string.</p>
+
+<p>String format:</p>
+
+<p>[word]\t[phones]
+[wordb]\t[phonesb]
+<a href="1">wordb</a>\t[phones2]</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NTPronunciationDictionary.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithName:words:" title="initWithName:words:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithName:words:">&ndash;&nbsp;initWithName:words:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates a dictionary with the given words.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithName:(NSString *)<em>name</em> words:(NSDictionary *)<em>words</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>name</code></th>
+						<td><p>Name</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>words</code></th>
+						<td><p>Words/Phones.</p>
+
+<p>NSDictionary Format:</p>
+
+<p>@{
+@&ldquo;word&rdquo; : @[ @&ldquo;phone a&rdquo;, @&ldquo;phone b&rdquo;, @&ldquo;phone c&rdquo;],
+@&ldquo;word b&rdquo; : @[ @&ldquo;phone ba&rdquo;, @&ldquo;phone bb&rdquo;,]
+}</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Dictionary</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Creates a dictionary with the given words.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NTPronunciationDictionary.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addWord:phones:" title="addWord:phones:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addWord:phones:">&ndash;&nbsp;addWord:phones:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Add the phones for the given word. Existing phones for the same words won&rsquo;t be deleted.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)addWord:(NSString *)<em>word</em> phones:(NSString *)<em>phones</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>word</code></th>
+						<td><p>Word (e.g. &ldquo;Flight&rdquo;)</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>phones</code></th>
+						<td><p>Phones (e.g. &ldquo;F L AY T&rdquo;)</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Add the phones for the given word. Existing phones for the same words won&rsquo;t be deleted.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NTPronunciationDictionary.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addWord:listOfPhones:" title="addWord:listOfPhones:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addWord:listOfPhones:">&ndash;&nbsp;addWord:listOfPhones:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Add multiple phones for the given word. Existing phones for the same words won&rsquo;t be deleted.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)addWord:(NSString *)<em>word</em> listOfPhones:(NSArray *)<em>listOfPhones</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>word</code></th>
+						<td><p>Word (e.g. &ldquo;Flight&rdquo;)</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>listOfPhones</code></th>
+						<td><p>Array (e.g. [&ldquo;F L AY T&rdquo;, &ldquo;F L EY T&rdquo;])</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Add multiple phones for the given word. Existing phones for the same words won&rsquo;t be deleted.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NTPronunciationDictionary.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addWords:" title="addWords:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addWords:">&ndash;&nbsp;addWords:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Adds words and phones from dictionary.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)addWords:(NSDictionary *)<em>words</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>words</code></th>
+						<td><p>dictionary</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Adds words and phones from dictionary.</p>
+
+<p>NSDictionary Format:</p>
+
+<p>@{
+@&ldquo;word&rdquo; : @[ @&ldquo;phone a&rdquo;, @&ldquo;phone b&rdquo;, @&ldquo;phone c&rdquo;],
+@&ldquo;word b&rdquo; : @[ @&ldquo;phone ba&rdquo;, @&ldquo;phone bb&rdquo;,]
+}</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NTPronunciationDictionary.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeWord:" title="removeWord:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeWord:">&ndash;&nbsp;removeWord:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Removes the given word with all corresponding phones.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)removeWord:(NSString *)<em>word</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>word</code></th>
+						<td><p>The word to delete.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Removes the given word with all corresponding phones.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NTPronunciationDictionary.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removePhones:ofWord:" title="removePhones:ofWord:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removePhones:ofWord:">&ndash;&nbsp;removePhones:ofWord:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Remove the given phones from the given word. If there are no more phones for word, it will be removed.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)removePhones:(NSString *)<em>phones</em> ofWord:(NSString *)<em>word</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>phones</code></th>
+						<td><p>phones</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>word</code></th>
+						<td><p>word</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Remove the given phones from the given word. If there are no more phones for word, it will be removed.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NTPronunciationDictionary.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addWordsFromDictionary:" title="addWordsFromDictionary:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addWordsFromDictionary:">&ndash;&nbsp;addWordsFromDictionary:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Adds all word from a dictionary.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)addWordsFromDictionary:(NTPronunciationDictionary *)<em>dictionary</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>dictionary</code></th>
+						<td><p>Words/Phones.</p>
+
+<p>NSDictionary Format:</p>
+
+<p>@{
+@&ldquo;word&rdquo; : @[ @&ldquo;phone a&rdquo;, @&ldquo;phone b&rdquo;, @&ldquo;phone c&rdquo;],
+@&ldquo;word b&rdquo; : @[ @&ldquo;phone ba&rdquo;, @&ldquo;phone bb&rdquo;,]
+}</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Adds all word from a dictionary.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NTPronunciationDictionary.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/parseWordsFromDictionaryString:" title="parseWordsFromDictionaryString:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/parseWordsFromDictionaryString:">&ndash;&nbsp;parseWordsFromDictionaryString:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Add parsed words from dictionary string.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)parseWordsFromDictionaryString:(NSString *)<em>dictionaryString</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>dictionaryString</code></th>
+						<td><p>String to parse words from</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Add parsed words from dictionary string.</p>
+
+<p>String format:</p>
+
+<p>[word]\t[phones]
+[wordb]\t[phonesb]
+<a href="1">wordb</a>\t[phones2]</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NTPronunciationDictionary.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/createDictionaryString" title="createDictionaryString"></a>
+	<h3 class="method-title"><code><a href="#//api/name/createDictionaryString">&ndash;&nbsp;createDictionaryString</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates a dictionary string with the <a href="#//api/name/entries">entries</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSString *)createDictionaryString</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>dictionary string</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Creates a dictionary string with the <a href="#//api/name/entries">entries</a>.</p>
+
+<p>String format:</p>
+
+<p>[word]\t[phones]
+[wordb]\t[phonesb]
+<a href="1">wordb</a>\t[phones2]</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NTPronunciationDictionary.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/loadWordsFromFileAtPath:" title="loadWordsFromFileAtPath:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/loadWordsFromFileAtPath:">&ndash;&nbsp;loadWordsFromFileAtPath:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Add words from a phonetic dictionary file.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)loadWordsFromFileAtPath:(NSString *)<em>path</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>path</code></th>
+						<td><p>The path to the file with the words to load.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Add words from a phonetic dictionary file.</p>
+
+<p>File format:</p>
+
+<p>[word]\t[phones]
+[wordb]\t[phonesb]
+<a href="1">wordb</a>\t[phonesb2]</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NTPronunciationDictionary.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/writeToFileAtPath:" title="writeToFileAtPath:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/writeToFileAtPath:">&ndash;&nbsp;writeToFileAtPath:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Writes <a href="#//api/name/entries">entries</a> to a file.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)writeToFileAtPath:(NSString *)<em>path</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>path</code></th>
+						<td><p>Path to write to.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Writes <a href="#//api/name/entries">entries</a> to a file.</p>
+
+<p>File format:</p>
+
+<p>[word]\t[phones]
+[wordb]\t[phonesb]
+<a href="1">wordb</a>\t[phonesb2]</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NTPronunciationDictionary.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/phonesForWord:" title="phonesForWord:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/phonesForWord:">&ndash;&nbsp;phonesForWord:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns all phones for the given word.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSArray *)phonesForWord:(NSString *)<em>word</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>word</code></th>
+						<td><p>word</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>array with phones. (e.g. [@&ldquo;F L AY T&rdquo;, @&ldquo;F L EY T&rdquo;])</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Returns all phones for the given word.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NTPronunciationDictionary.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/copyWithZone:" title="copyWithZone:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/copyWithZone:">&ndash;&nbsp;copyWithZone:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (id)copyWithZone:(NSZone *)<em>zone</em></code></div>
+
+		    
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Extension Methods" name="task_Extension Methods"></a>
+						<h2 class="task-title">Extension Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/internalPhones" title="internalPhones"></a>
+	<h3 class="method-title"><code><a href="#//api/name/internalPhones">&nbsp;&nbsp;internalPhones</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSMutableDictionary *internalPhones</code></div>
+
+		    
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2016 ZHAW Institute of applied Information Technology. All rights reserved. Updated: 2016-07-01</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

@@ -1,3 +1,0 @@
-#JSGF V1.0;
-grammar abbr;
-public <abbr> = YES | NO;

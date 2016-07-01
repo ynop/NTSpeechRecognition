@@ -1,0 +1,1883 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>NTPocketSphinxDecoder Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">NTSpeechTools </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">ZHAW Institute of applied Information Technology</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/activeSearch">activeSearch</option>
+		
+		<option value="//api/name/config">config</option>
+		
+		<option value="//api/name/decoder">decoder</option>
+		
+		<option value="//api/name/dictionary">dictionary</option>
+		
+		<option value="//api/name/internalSearches">internalSearches</option>
+		
+		<option value="//api/name/searches">searches</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/pathToCMUDict">+ pathToCMUDict</option>
+		
+		<option value="//api/name/pathToCMULanguageModel">+ pathToCMULanguageModel</option>
+		
+		<option value="//api/name/pathToEnglishAcousticModel">+ pathToEnglishAcousticModel</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/addGrammarSearch:">- addGrammarSearch:</option>
+		
+		<option value="//api/name/addJsgfFileSearch:">- addJsgfFileSearch:</option>
+		
+		<option value="//api/name/addKeywortSpottingSearch:">- addKeywortSpottingSearch:</option>
+		
+		<option value="//api/name/addNGramFileSearch:">- addNGramFileSearch:</option>
+		
+		<option value="//api/name/addSearch:">- addSearch:</option>
+		
+		<option value="//api/name/addWord:withPhones:update:">- addWord:withPhones:update:</option>
+		
+		<option value="//api/name/dealloc">- dealloc</option>
+		
+		<option value="//api/name/endUtterance">- endUtterance</option>
+		
+		<option value="//api/name/getHypothesis">- getHypothesis</option>
+		
+		<option value="//api/name/getHypothesisFinal:">- getHypothesisFinal:</option>
+		
+		<option value="//api/name/inSpeech">- inSpeech</option>
+		
+		<option value="//api/name/init">- init</option>
+		
+		<option value="//api/name/initWithConfiguration:">- initWithConfiguration:</option>
+		
+		<option value="//api/name/loadPronunciationDictionary:">- loadPronunciationDictionary:</option>
+		
+		<option value="//api/name/loadPronunciationDictionaryFromFile:">- loadPronunciationDictionaryFromFile:</option>
+		
+		<option value="//api/name/loadPronunciationDictionaryFromFile:andFillerDictionary:">- loadPronunciationDictionaryFromFile:andFillerDictionary:</option>
+		
+		<option value="//api/name/lookupWord:">- lookupWord:</option>
+		
+		<option value="//api/name/processData:samples:">- processData:samples:</option>
+		
+		<option value="//api/name/processData:samples:noSearch:fullUtterance:">- processData:samples:noSearch:fullUtterance:</option>
+		
+		<option value="//api/name/reinitWithConfiguration:">- reinitWithConfiguration:</option>
+		
+		<option value="//api/name/removeSearchWithName:">- removeSearchWithName:</option>
+		
+		<option value="//api/name/savePronunciationDictionaryToFile:">- savePronunciationDictionaryToFile:</option>
+		
+		<option value="//api/name/searchWithName:">- searchWithName:</option>
+		
+		<option value="//api/name/setActiveSearchWithName:">- setActiveSearchWithName:</option>
+		
+		<option value="//api/name/startUtterance">- startUtterance</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">NTPocketSphinxDecoder Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>NTPocketSphinxDecoder.h<br />NTPocketSphinxDecoder.m</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>A class that wraps the pocketsphinx <a href="#//api/name/decoder">decoder</a> (ps<em><a href="#//api/name/decoder">decoder</a></em>t). Like the underlying ps<em><a href="#//api/name/decoder">decoder</a></em>t the <a href="#//api/name/decoder">decoder</a> is not thread safe, so don&rsquo;t call methods from different threads at the same time.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/config" title="config"></a>
+	<h3 class="method-title"><code><a href="#//api/name/config">&nbsp;&nbsp;config</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The config currently is active for this <a href="#//api/name/decoder">decoder</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) NTPocketSphinxConfig *config</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The config currently is active for this <a href="#//api/name/decoder">decoder</a>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NTPocketSphinxDecoder.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/dictionary" title="dictionary"></a>
+	<h3 class="method-title"><code><a href="#//api/name/dictionary">&nbsp;&nbsp;dictionary</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The dictionary currently is active.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) NTPronunciationDictionary *dictionary</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The dictionary currently is active.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NTPocketSphinxDecoder.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/activeSearch" title="activeSearch"></a>
+	<h3 class="method-title"><code><a href="#//api/name/activeSearch">&nbsp;&nbsp;activeSearch</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The search currently is active.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) NTSpeechSearch *activeSearch</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The search currently is active.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NTPocketSphinxDecoder.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/searches" title="searches"></a>
+	<h3 class="method-title"><code><a href="#//api/name/searches">&nbsp;&nbsp;searches</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>A list of searches which were added to the <a href="#//api/name/decoder">decoder</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) NSArray&lt;NTSpeechSearch*&gt; *searches</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>A list of searches which were added to the <a href="#//api/name/decoder">decoder</a>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NTPocketSphinxDecoder.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithConfiguration:" title="initWithConfiguration:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithConfiguration:">&ndash;&nbsp;initWithConfiguration:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Create a <a href="#//api/name/decoder">decoder</a> with the given <a href="#//api/name/config">config</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithConfiguration:(NTPocketSphinxConfig *)<em>config</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>config</code></th>
+						<td><p>Config</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Instance</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Create a <a href="#//api/name/decoder">decoder</a> with the given <a href="#//api/name/config">config</a>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NTPocketSphinxDecoder.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/reinitWithConfiguration:" title="reinitWithConfiguration:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/reinitWithConfiguration:">&ndash;&nbsp;reinitWithConfiguration:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Reinitialize the <a href="#//api/name/decoder">decoder</a> with updated configuration. This function allows you to switch the acoustic model, <a href="#//api/name/dictionary">dictionary</a>, or other configuration without creating an entirely new decoding object.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)reinitWithConfiguration:(NTPocketSphinxConfig *)<em>config</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>config</code></th>
+						<td><p>Config</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>YES on succes, NO on failure</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Reinitialize the <a href="#//api/name/decoder">decoder</a> with updated configuration. This function allows you to switch the acoustic model, <a href="#//api/name/dictionary">dictionary</a>, or other configuration without creating an entirely new decoding object.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NTPocketSphinxDecoder.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/loadPronunciationDictionaryFromFile:" title="loadPronunciationDictionaryFromFile:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/loadPronunciationDictionaryFromFile:">&ndash;&nbsp;loadPronunciationDictionaryFromFile:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Load the <a href="#//api/name/dictionary">dictionary</a> from a file</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)loadPronunciationDictionaryFromFile:(NSString *)<em>pronunciationDictPath</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>pronunciationDictPath</code></th>
+						<td><p>Path to the <a href="#//api/name/dictionary">dictionary</a> file</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>YES on succes, NO on failure</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Load the <a href="#//api/name/dictionary">dictionary</a> from a file</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NTPocketSphinxDecoder.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/loadPronunciationDictionaryFromFile:andFillerDictionary:" title="loadPronunciationDictionaryFromFile:andFillerDictionary:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/loadPronunciationDictionaryFromFile:andFillerDictionary:">&ndash;&nbsp;loadPronunciationDictionaryFromFile:andFillerDictionary:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Load pronunciation and filler <a href="#//api/name/dictionary">dictionary</a> from files</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)loadPronunciationDictionaryFromFile:(NSString *)<em>pronunciationDictPath</em> andFillerDictionary:(NSString *)<em>fillerDictPath</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>pronunciationDictPath</code></th>
+						<td><p>Path to pronunciation file</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>fillerDictPath</code></th>
+						<td><p>Path to filler file</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>YES on succes, NO on failure</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Load pronunciation and filler <a href="#//api/name/dictionary">dictionary</a> from files</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NTPocketSphinxDecoder.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/loadPronunciationDictionary:" title="loadPronunciationDictionary:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/loadPronunciationDictionary:">&ndash;&nbsp;loadPronunciationDictionary:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Load pronunciation <a href="#//api/name/dictionary">dictionary</a></p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)loadPronunciationDictionary:(NTPronunciationDictionary *)<em>dictionary</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>dictionary</code></th>
+						<td><p>Dictionary</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>YES on succes, NO on failure</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Load pronunciation <a href="#//api/name/dictionary">dictionary</a></p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NTPocketSphinxDecoder.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/savePronunciationDictionaryToFile:" title="savePronunciationDictionaryToFile:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/savePronunciationDictionaryToFile:">&ndash;&nbsp;savePronunciationDictionaryToFile:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Save the <a href="#//api/name/dictionary">dictionary</a> to a file</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)savePronunciationDictionaryToFile:(NSString *)<em>path</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>path</code></th>
+						<td><p>Path to write to</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>YES on succes, NO on failure</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Save the <a href="#//api/name/dictionary">dictionary</a> to a file</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NTPocketSphinxDecoder.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addWord:withPhones:update:" title="addWord:withPhones:update:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addWord:withPhones:update:">&ndash;&nbsp;addWord:withPhones:update:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Add word to the <a href="#//api/name/dictionary">dictionary</a></p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)addWord:(NSString *)<em>word</em> withPhones:(NSString *)<em>phones</em> update:(BOOL)<em>update</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>word</code></th>
+						<td><p>Word</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>phones</code></th>
+						<td><p>Phonemes</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>update</code></th>
+						<td><p>If YES, update the search module (whichever one is currently active) to recognize the newly added word. If adding multiple words, it is more efficient to pass NO here in all but the last word.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>YES on succes, NO on failure</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Add word to the <a href="#//api/name/dictionary">dictionary</a></p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NTPocketSphinxDecoder.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/lookupWord:" title="lookupWord:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/lookupWord:">&ndash;&nbsp;lookupWord:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Lookup a word</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSArray&lt;NSString*&gt; *)lookupWord:(NSString *)<em>word</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>word</code></th>
+						<td><p>Word</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Array of phone strings or empty array if word not present.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Lookup a word</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NTPocketSphinxDecoder.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setActiveSearchWithName:" title="setActiveSearchWithName:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setActiveSearchWithName:">&ndash;&nbsp;setActiveSearchWithName:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Activates search with the provided name. The search must be added before.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)setActiveSearchWithName:(NSString *)<em>name</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>name</code></th>
+						<td><p>Name</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>YES on succes, NO on failure</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Activates search with the provided name. The search must be added before.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NTPocketSphinxDecoder.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addSearch:" title="addSearch:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addSearch:">&ndash;&nbsp;addSearch:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Adds new search. The search can be activated using @link -setActiveSearchWithName @/link</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)addSearch:(NTSpeechSearch *)<em>search</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>search</code></th>
+						<td><p>search</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Yes on succes, NO on failure</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Adds new search. The search can be activated using @link -setActiveSearchWithName @/link</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NTPocketSphinxDecoder.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeSearchWithName:" title="removeSearchWithName:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeSearchWithName:">&ndash;&nbsp;removeSearchWithName:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Removes the search with the given name</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)removeSearchWithName:(NSString *)<em>name</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>name</code></th>
+						<td><p>Name</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Yes on succes, NO on failure</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Removes the search with the given name</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NTPocketSphinxDecoder.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/searchWithName:" title="searchWithName:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/searchWithName:">&ndash;&nbsp;searchWithName:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Get search with the given name.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NTSpeechSearch *)searchWithName:(NSString *)<em>name</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>name</code></th>
+						<td><p>name</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Search if existing, otherwise nil</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Get search with the given name.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NTPocketSphinxDecoder.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/startUtterance" title="startUtterance"></a>
+	<h3 class="method-title"><code><a href="#//api/name/startUtterance">&ndash;&nbsp;startUtterance</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Start utterance processing.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)startUtterance</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>YES on success, NO on error</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Start utterance processing.</p>
+
+<p>This function should be called before any utterance data is passed to the <a href="#//api/name/decoder">decoder</a>. It marks the start of a new utterance and reinitializes internal data structures.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NTPocketSphinxDecoder.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/endUtterance" title="endUtterance"></a>
+	<h3 class="method-title"><code><a href="#//api/name/endUtterance">&ndash;&nbsp;endUtterance</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>End utterance processing.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)endUtterance</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>YES on success, NO on error</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>End utterance processing.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NTPocketSphinxDecoder.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/inSpeech" title="inSpeech"></a>
+	<h3 class="method-title"><code><a href="#//api/name/inSpeech">&ndash;&nbsp;inSpeech</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Checks if the last feed audio buffer contained speech.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)inSpeech</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>YES if last buffer contained speech, NO otherwise</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Checks if the last feed audio buffer contained speech.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NTPocketSphinxDecoder.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/processData:samples:" title="processData:samples:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/processData:samples:">&ndash;&nbsp;processData:samples:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Decode raw audio data.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (int)processData:(SInt16 *)<em>data</em> samples:(size_t)<em>numberOfSamples</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>data</code></th>
+						<td><p>Data</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>numberOfSamples</code></th>
+						<td><p>Number of Samples</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Number of frames of data searched, or &lt;0 for error.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Decode raw audio data.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NTPocketSphinxDecoder.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/processData:samples:noSearch:fullUtterance:" title="processData:samples:noSearch:fullUtterance:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/processData:samples:noSearch:fullUtterance:">&ndash;&nbsp;processData:samples:noSearch:fullUtterance:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Decode raw audio data.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (int)processData:(SInt16 *)<em>data</em> samples:(size_t)<em>numberOfSamples</em> noSearch:(BOOL)<em>noSearch</em> fullUtterance:(BOOL)<em>isFullUtterance</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>data</code></th>
+						<td><p>Data</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>numberOfSamples</code></th>
+						<td><p>Number of Samples</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>noSearch</code></th>
+						<td><p>If YES, perform feature extraction but don&rsquo;t do any recognition yet. This may be necessary if your processor has trouble doing recognition in real-time.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>isFullUtterance</code></th>
+						<td><p>If YES, this block of data is a full utterance worth of data. This may allow the recognizer to produce more accurate results.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Number of frames of data searched, or &lt;0 for error.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Decode raw audio data.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NTPocketSphinxDecoder.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getHypothesis" title="getHypothesis"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getHypothesis">&ndash;&nbsp;getHypothesis</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Get hypothesis.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NTHypothesis *)getHypothesis</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Best hypothesis at this point in decoding. Nil if no hyp is available.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Get hypothesis.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NTPocketSphinxDecoder.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getHypothesisFinal:" title="getHypothesisFinal:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getHypothesisFinal:">&ndash;&nbsp;getHypothesisFinal:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Get hypothesis final flag.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NTHypothesis *)getHypothesisFinal:(BOOL *)<em>isFinal</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>isFinal</code></th>
+						<td><p>Flag which is set to YES if hypothesis is reached final state in the grammar.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Best hypothesis at this point in decoding. nil if no hypothesis is available.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Get hypothesis final flag.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NTPocketSphinxDecoder.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/pathToEnglishAcousticModel" title="pathToEnglishAcousticModel"></a>
+	<h3 class="method-title"><code><a href="#//api/name/pathToEnglishAcousticModel">+&nbsp;pathToEnglishAcousticModel</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Default English acoustic model</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (NSString *)pathToEnglishAcousticModel</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Path to the default english acoustic model</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Default English acoustic model</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NTPocketSphinxDecoder.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/pathToCMUDict" title="pathToCMUDict"></a>
+	<h3 class="method-title"><code><a href="#//api/name/pathToCMUDict">+&nbsp;pathToCMUDict</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>CMU Pronunciation Dictionary</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (NSString *)pathToCMUDict</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Path to the CMU Dictionary</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>CMU Pronunciation Dictionary</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NTPocketSphinxDecoder.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/pathToCMULanguageModel" title="pathToCMULanguageModel"></a>
+	<h3 class="method-title"><code><a href="#//api/name/pathToCMULanguageModel">+&nbsp;pathToCMULanguageModel</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>CMU Language Model (The one shipped with PocketSphinx)</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (NSString *)pathToCMULanguageModel</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Path to the CMU Language model</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>CMU Language Model (The one shipped with PocketSphinx)</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NTPocketSphinxDecoder.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/init" title="init"></a>
+	<h3 class="method-title"><code><a href="#//api/name/init">&ndash;&nbsp;init</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)init</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/dealloc" title="dealloc"></a>
+	<h3 class="method-title"><code><a href="#//api/name/dealloc">&ndash;&nbsp;dealloc</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)dealloc</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addKeywortSpottingSearch:" title="addKeywortSpottingSearch:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addKeywortSpottingSearch:">&ndash;&nbsp;addKeywortSpottingSearch:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)addKeywortSpottingSearch:(NTKeywordSpottingSearch *)<em>search</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addGrammarSearch:" title="addGrammarSearch:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addGrammarSearch:">&ndash;&nbsp;addGrammarSearch:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)addGrammarSearch:(NTGrammarSearch *)<em>search</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addJsgfFileSearch:" title="addJsgfFileSearch:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addJsgfFileSearch:">&ndash;&nbsp;addJsgfFileSearch:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)addJsgfFileSearch:(NTJsgfFileSearch *)<em>search</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addNGramFileSearch:" title="addNGramFileSearch:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addNGramFileSearch:">&ndash;&nbsp;addNGramFileSearch:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)addNGramFileSearch:(NTNGramFileSearch *)<em>search</em></code></div>
+
+		    
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Extension Methods" name="task_Extension Methods"></a>
+						<h2 class="task-title">Extension Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/decoder" title="decoder"></a>
+	<h3 class="method-title"><code><a href="#//api/name/decoder">&nbsp;&nbsp;decoder</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) ps_decoder_t *decoder</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/internalSearches" title="internalSearches"></a>
+	<h3 class="method-title"><code><a href="#//api/name/internalSearches">&nbsp;&nbsp;internalSearches</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSMutableDictionary&lt;NSString*NTSpeechSearch*&gt; *internalSearches</code></div>
+
+		    
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2016 ZHAW Institute of applied Information Technology. All rights reserved. Updated: 2016-07-01</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>
