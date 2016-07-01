@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" 
+    "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>--project-name</key>
+    <string>NTSpeechTools</string>
+    <key>--project-company</key>
+    <string>ZHAW Institute of applied Information Technology</string>
+    <key>--company-id</key>
+    <string>ch.zhaw.init</string>
+
+    <key>--output</key>
+    <string>APIDOC</string>
+
+    <key>--create-docset</key>
+    <false/>
+
+    <key>--keep-undocumented-objects</key>
+    <true/>
+
+    <key>--keep-undocumented-members</key>
+    <true/>
+
+    <key>--ignore</key>
+    <array>
+        <string>Documentation</string>
+        <string>NTSpeechToolsTests</string>
+    </array>
+
+</dict>
+</plist>
