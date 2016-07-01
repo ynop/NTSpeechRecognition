@@ -7,7 +7,9 @@ NTSpeechRecognition is a iOS/macOS framework, written in Objective-c, providing 
 ## Features
 * Wrapper for the PocketSphinx decoder
 * Recognizer based on the PocketSphinx decoder
-* Switch between searches immediatly
+  * Switch between searches immediatly
+  * Partial hypotheses (Before end of utterance is detected)
+  * Keyword Spotting, Grammar, NGram
 
 ## Installation
 
