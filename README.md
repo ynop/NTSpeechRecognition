@@ -24,7 +24,7 @@ github "ynop/NTSpeechRecognition"
 You also can add this project as subproject.
 
 ## Documentation
-Checkout out [API Reference](https://github.engineering.zhaw.ch/pages/buec/NTSpeechRecognition/).
+Checkout out [API Reference](https://ynop.github.io/NTSpeechRecognition/).
 
 ## Basic Usage
 
