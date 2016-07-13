@@ -86,6 +86,12 @@ To get informed about hypotheses and state changes we implement the **NTSpeechRe
 {
 }
 
+// Receive partial hypotheses (End of utterance wasn't detected yet)
+// First you need to set returnPartialHypotheses = YES; 
+- (void)speechRecognizer:(id<NTSpeechRecognizer>)speechRecognizer didReceivePartialHypothesis:(NTHypothesis*)hypothesis forSearch:(NTSpeechSearch*)search
+{
+}
+
 // Receive information about state changes of the recognizer (listening/not listening)
 - (void)speechRecognizer:(id<NTSpeechRecognizer>)speechRecognizer didChangeListeningState:(BOOL)isListening
 {
