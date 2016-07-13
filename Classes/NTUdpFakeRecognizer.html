@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>NTSpeechRecognizer Protocol Reference</title>
+	<title>NTUdpFakeRecognizer Class Reference</title>
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
@@ -56,23 +56,11 @@
 	
 	<optgroup label="Properties">
 		
-		<option value="//api/name/activeSearch">activeSearch</option>
+		<option value="//api/name/delegates">delegates</option>
 		
-		<option value="//api/name/audioSource">audioSource</option>
+		<option value="//api/name/port">port</option>
 		
-		<option value="//api/name/dictionary">dictionary</option>
-		
-		<option value="//api/name/isListening">isListening</option>
-		
-		<option value="//api/name/isStarted">isStarted</option>
-		
-		<option value="//api/name/isSuspended">isSuspended</option>
-		
-		<option value="//api/name/returnNullHypotheses">returnNullHypotheses</option>
-		
-		<option value="//api/name/returnPartialHypotheses">returnPartialHypotheses</option>
-		
-		<option value="//api/name/searches">searches</option>
+		<option value="//api/name/socket">socket</option>
 		
 	</optgroup>
 	
@@ -81,6 +69,8 @@
 
 	
 	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/activeSearch">- activeSearch</option>
 		
 		<option value="//api/name/addDelegate:">- addDelegate:</option>
 		
@@ -92,9 +82,27 @@
 		
 		<option value="//api/name/addWords:">- addWords:</option>
 		
+		<option value="//api/name/audioSource:didReadData:">- audioSource:didReadData:</option>
+		
+		<option value="//api/name/dictionary">- dictionary</option>
+		
+		<option value="//api/name/init">- init</option>
+		
 		<option value="//api/name/initWithAudioSource:">- initWithAudioSource:</option>
 		
+		<option value="//api/name/initWithAudioSource:port:">- initWithAudioSource:port:</option>
+		
+		<option value="//api/name/initWithPort:">- initWithPort:</option>
+		
+		<option value="//api/name/isListening">- isListening</option>
+		
 		<option value="//api/name/loadPronunciationDictioanry:">- loadPronunciationDictioanry:</option>
+		
+		<option value="//api/name/notifyDidChangeListeningState:">- notifyDidChangeListeningState:</option>
+		
+		<option value="//api/name/notifyHypothesisReceived:">- notifyHypothesisReceived:</option>
+		
+		<option value="//api/name/notifyPartialHypothesisReceived:">- notifyPartialHypothesisReceived:</option>
 		
 		<option value="//api/name/removeDelegate:">- removeDelegate:</option>
 		
@@ -106,13 +114,19 @@
 		
 		<option value="//api/name/searchWithName:">- searchWithName:</option>
 		
+		<option value="//api/name/searches">- searches</option>
+		
 		<option value="//api/name/setActiveSearchByName:">- setActiveSearchByName:</option>
+		
+		<option value="//api/name/setAudioSource:">- setAudioSource:</option>
 		
 		<option value="//api/name/start">- start</option>
 		
 		<option value="//api/name/stop">- stop</option>
 		
 		<option value="//api/name/suspend">- suspend</option>
+		
+		<option value="//api/name/udpSocket:didReceiveData:fromAddress:withFilterContext:">- udpSocket:didReceiveData:fromAddress:withFilterContext:</option>
 		
 	</optgroup>
 	
@@ -129,16 +143,19 @@
 		<div id="overview_contents" class="container">
 			<div id="content">
 				<main role="main">
-					<h1 class="title">NTSpeechRecognizer Protocol Reference</h1>
+					<h1 class="title">NTUdpFakeRecognizer Class Reference</h1>
 
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
 	<th>Conforms to</th>
-	<td><a href="../Protocols/NTAudioSourceDelegate.html">NTAudioSourceDelegate</a></td>
+	<td><a href="../Protocols/NTSpeechRecognizer.html">NTSpeechRecognizer</a></td>
 </tr><tr>
 	<th>Declared in</th>
-	<td>NTSpeechRecognizer.h</td>
+	<td>NTUdpFakeRecognizer.h<br />NTUdpFakeRecognizer.m</td>
 </tr>
 						</tbody></table></div>
 					
@@ -148,7 +165,8 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>Basic interface of a speech recognizer.</p>
+						<pre><code>A recognizer I used for testing and evaluation purposes. It just receives string from a udp connection and posts them as hypotheses.
+</code></pre>
 					</div>
 					
 					
@@ -160,429 +178,69 @@
 						
 
 						
-						
+						<h2 class="task-title">Other Methods</h2>
 
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/isListening" title="isListening"></a>
-	<h3 class="method-title"><code><a href="#//api/name/isListening">&nbsp;&nbsp;isListening</a></code>
-<span class="task-item-suffix">required method</span></h3>
+	<a name="//api/name/initWithPort:" title="initWithPort:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithPort:">&ndash;&nbsp;initWithPort:</a></code>
+</h3>
 
 	<div class="method-info">
 		<div class="pointy-thing"></div>
 
 		<div class="method-info-container">
 			
-			
-			<div class="method-subsection brief-description">
-				<p>Current listening state. YES if the recognizer currently is listening for speech. Otherwise NO.</p>
-			</div>
-			
-		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) BOOL isListening</code></div>
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithPort:(UInt16)<em>port</em></code></div>
 
 		    
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Current listening state. YES if the recognizer currently is listening for speech. Otherwise NO.</p>
-
-<p>Same as (<a href="../Protocols/NTSpeechRecognizer.html#//api/name/isStarted">isStarted</a> &amp;&amp; !<a href="../Protocols/NTSpeechRecognizer.html#//api/name/isSuspended">isSuspended</a>).</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">NTSpeechRecognizer.h</code></p>
-			</div>
-			
-			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/isStarted" title="isStarted"></a>
-	<h3 class="method-title"><code><a href="#//api/name/isStarted">&nbsp;&nbsp;isStarted</a></code>
-<span class="task-item-suffix">required method</span></h3>
+	<a name="//api/name/initWithAudioSource:port:" title="initWithAudioSource:port:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithAudioSource:port:">&ndash;&nbsp;initWithAudioSource:port:</a></code>
+</h3>
 
 	<div class="method-info">
 		<div class="pointy-thing"></div>
 
 		<div class="method-info-container">
 			
-			
-			<div class="method-subsection brief-description">
-				<p>YES if the recognizer was started.</p>
-			</div>
-			
-		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) BOOL isStarted</code></div>
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithAudioSource:(NTAudioSource *)<em>audioSource</em> port:(UInt16)<em>port</em></code></div>
 
 		    
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>YES if the recognizer was started.</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">NTSpeechRecognizer.h</code></p>
-			</div>
-			
-			
 		</div>
 	</div>
-</div><div class="section-method">
-	<a name="//api/name/isSuspended" title="isSuspended"></a>
-	<h3 class="method-title"><code><a href="#//api/name/isSuspended">&nbsp;&nbsp;isSuspended</a></code>
-<span class="task-item-suffix">required method</span></h3>
+</div>
+						</div>
+						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/init" title="init"></a>
+	<h3 class="method-title"><code><a href="#//api/name/init">&ndash;&nbsp;init</a></code>
+</h3>
 
 	<div class="method-info">
 		<div class="pointy-thing"></div>
 
 		<div class="method-info-container">
 			
-			
-			<div class="method-subsection brief-description">
-				<p>YES if the recognizer currently is suspended.</p>
-			</div>
-			
-		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) BOOL isSuspended</code></div>
+			<div class="method-subsection method-declaration"><code>- (instancetype)init</code></div>
 
 		    
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>YES if the recognizer currently is suspended.</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">NTSpeechRecognizer.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/dictionary" title="dictionary"></a>
-	<h3 class="method-title"><code><a href="#//api/name/dictionary">&nbsp;&nbsp;dictionary</a></code>
-<span class="task-item-suffix">required method</span></h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>The dictionary of the recognizer.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) NTPronunciationDictionary *dictionary</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>The dictionary of the recognizer.</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">NTSpeechRecognizer.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/searches" title="searches"></a>
-	<h3 class="method-title"><code><a href="#//api/name/searches">&nbsp;&nbsp;searches</a></code>
-<span class="task-item-suffix">required method</span></h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>All searches that are registered in this recognizer.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) NSArray&lt;NTSpeechSearch*&gt; *searches</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>All searches that are registered in this recognizer.</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">NTSpeechRecognizer.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/activeSearch" title="activeSearch"></a>
-	<h3 class="method-title"><code><a href="#//api/name/activeSearch">&nbsp;&nbsp;activeSearch</a></code>
-<span class="task-item-suffix">required method</span></h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>The search currently is active.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) NTSpeechSearch *activeSearch</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>The search currently is active.</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">NTSpeechRecognizer.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/audioSource" title="audioSource"></a>
-	<h3 class="method-title"><code><a href="#//api/name/audioSource">&nbsp;&nbsp;audioSource</a></code>
-<span class="task-item-suffix">required method</span></h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>The audio source where the recognizer gets input data from.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NTAudioSource *audioSource</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>The audio source where the recognizer gets input data from.</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">NTSpeechRecognizer.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/returnNullHypotheses" title="returnNullHypotheses"></a>
-	<h3 class="method-title"><code><a href="#//api/name/returnNullHypotheses">&nbsp;&nbsp;returnNullHypotheses</a></code>
-<span class="task-item-suffix">required method</span></h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Whether the recognizer should notify about NULL Hypotheses.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic) BOOL returnNullHypotheses</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Whether the recognizer should notify about NULL Hypotheses.</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">NTSpeechRecognizer.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/returnPartialHypotheses" title="returnPartialHypotheses"></a>
-	<h3 class="method-title"><code><a href="#//api/name/returnPartialHypotheses">&nbsp;&nbsp;returnPartialHypotheses</a></code>
-<span class="task-item-suffix">required method</span></h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>If enabled the recognizer returns partial hypotheses (Hyoptheses, when the end of the utterance wasn&rsquo;t detected)</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic) BOOL returnPartialHypotheses</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>If enabled the recognizer returns partial hypotheses (Hyoptheses, when the end of the utterance wasn&rsquo;t detected)</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">NTSpeechRecognizer.h</code></p>
-			</div>
-			
-			
 		</div>
 	</div>
 </div><div class="section-method">
 	<a name="//api/name/initWithAudioSource:" title="initWithAudioSource:"></a>
 	<h3 class="method-title"><code><a href="#//api/name/initWithAudioSource:">&ndash;&nbsp;initWithAudioSource:</a></code>
-<span class="task-item-suffix">required method</span></h3>
+</h3>
 
 	<div class="method-info">
 		<div class="pointy-thing"></div>
@@ -645,7 +303,7 @@
 </div><div class="section-method">
 	<a name="//api/name/start" title="start"></a>
 	<h3 class="method-title"><code><a href="#//api/name/start">&ndash;&nbsp;start</a></code>
-<span class="task-item-suffix">required method</span></h3>
+</h3>
 
 	<div class="method-info">
 		<div class="pointy-thing"></div>
@@ -691,7 +349,7 @@
 </div><div class="section-method">
 	<a name="//api/name/stop" title="stop"></a>
 	<h3 class="method-title"><code><a href="#//api/name/stop">&ndash;&nbsp;stop</a></code>
-<span class="task-item-suffix">required method</span></h3>
+</h3>
 
 	<div class="method-info">
 		<div class="pointy-thing"></div>
@@ -737,7 +395,7 @@
 </div><div class="section-method">
 	<a name="//api/name/suspend" title="suspend"></a>
 	<h3 class="method-title"><code><a href="#//api/name/suspend">&ndash;&nbsp;suspend</a></code>
-<span class="task-item-suffix">required method</span></h3>
+</h3>
 
 	<div class="method-info">
 		<div class="pointy-thing"></div>
@@ -783,7 +441,7 @@
 </div><div class="section-method">
 	<a name="//api/name/resume" title="resume"></a>
 	<h3 class="method-title"><code><a href="#//api/name/resume">&ndash;&nbsp;resume</a></code>
-<span class="task-item-suffix">required method</span></h3>
+</h3>
 
 	<div class="method-info">
 		<div class="pointy-thing"></div>
@@ -827,9 +485,181 @@
 		</div>
 	</div>
 </div><div class="section-method">
+	<a name="//api/name/isListening" title="isListening"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isListening">&ndash;&nbsp;isListening</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Current listening state. YES if the recognizer currently is listening for speech. Otherwise NO.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)isListening</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Current listening state. YES if the recognizer currently is listening for speech. Otherwise NO.</p>
+
+<p>Same as (<a href="../Protocols/NTSpeechRecognizer.html#//api/name/isStarted">isStarted</a> &amp;&amp; !<a href="../Protocols/NTSpeechRecognizer.html#//api/name/isSuspended">isSuspended</a>).</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NTSpeechRecognizer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setAudioSource:" title="setAudioSource:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setAudioSource:">&ndash;&nbsp;setAudioSource:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The audio source where the recognizer gets input data from.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setAudioSource:(NTAudioSource *)<em>audioSource</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The audio source where the recognizer gets input data from.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NTSpeechRecognizer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/audioSource:didReadData:" title="audioSource:didReadData:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/audioSource:didReadData:">&ndash;&nbsp;audioSource:didReadData:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)audioSource:(NTAudioSource *)<em>audioSource</em> didReadData:(NSData *)<em>data</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/udpSocket:didReceiveData:fromAddress:withFilterContext:" title="udpSocket:didReceiveData:fromAddress:withFilterContext:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/udpSocket:didReceiveData:fromAddress:withFilterContext:">&ndash;&nbsp;udpSocket:didReceiveData:fromAddress:withFilterContext:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)udpSocket:(GCDAsyncUdpSocket *)<em>sock</em> didReceiveData:(NSData *)<em>data</em> fromAddress:(NSData *)<em>address</em> withFilterContext:(id)<em>filterContext</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/dictionary" title="dictionary"></a>
+	<h3 class="method-title"><code><a href="#//api/name/dictionary">&ndash;&nbsp;dictionary</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The dictionary of the recognizer.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NTPronunciationDictionary *)dictionary</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The dictionary of the recognizer.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NTSpeechRecognizer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
 	<a name="//api/name/loadPronunciationDictioanry:" title="loadPronunciationDictioanry:"></a>
 	<h3 class="method-title"><code><a href="#//api/name/loadPronunciationDictioanry:">&ndash;&nbsp;loadPronunciationDictioanry:</a></code>
-<span class="task-item-suffix">required method</span></h3>
+</h3>
 
 	<div class="method-info">
 		<div class="pointy-thing"></div>
@@ -892,7 +722,7 @@
 </div><div class="section-method">
 	<a name="//api/name/addWord:phones:" title="addWord:phones:"></a>
 	<h3 class="method-title"><code><a href="#//api/name/addWord:phones:">&ndash;&nbsp;addWord:phones:</a></code>
-<span class="task-item-suffix">required method</span></h3>
+</h3>
 
 	<div class="method-info">
 		<div class="pointy-thing"></div>
@@ -962,7 +792,7 @@
 </div><div class="section-method">
 	<a name="//api/name/addWord:listOfPhones:" title="addWord:listOfPhones:"></a>
 	<h3 class="method-title"><code><a href="#//api/name/addWord:listOfPhones:">&ndash;&nbsp;addWord:listOfPhones:</a></code>
-<span class="task-item-suffix">required method</span></h3>
+</h3>
 
 	<div class="method-info">
 		<div class="pointy-thing"></div>
@@ -1032,7 +862,7 @@
 </div><div class="section-method">
 	<a name="//api/name/addWords:" title="addWords:"></a>
 	<h3 class="method-title"><code><a href="#//api/name/addWords:">&ndash;&nbsp;addWords:</a></code>
-<span class="task-item-suffix">required method</span></h3>
+</h3>
 
 	<div class="method-info">
 		<div class="pointy-thing"></div>
@@ -1100,9 +930,101 @@
 		</div>
 	</div>
 </div><div class="section-method">
+	<a name="//api/name/searches" title="searches"></a>
+	<h3 class="method-title"><code><a href="#//api/name/searches">&ndash;&nbsp;searches</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>All searches that are registered in this recognizer.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSArray *)searches</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>All searches that are registered in this recognizer.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NTSpeechRecognizer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/activeSearch" title="activeSearch"></a>
+	<h3 class="method-title"><code><a href="#//api/name/activeSearch">&ndash;&nbsp;activeSearch</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The search currently is active.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NTSpeechSearch *)activeSearch</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The search currently is active.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NTSpeechRecognizer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
 	<a name="//api/name/addSearch:" title="addSearch:"></a>
 	<h3 class="method-title"><code><a href="#//api/name/addSearch:">&ndash;&nbsp;addSearch:</a></code>
-<span class="task-item-suffix">required method</span></h3>
+</h3>
 
 	<div class="method-info">
 		<div class="pointy-thing"></div>
@@ -1165,7 +1087,7 @@
 </div><div class="section-method">
 	<a name="//api/name/removeSearch:" title="removeSearch:"></a>
 	<h3 class="method-title"><code><a href="#//api/name/removeSearch:">&ndash;&nbsp;removeSearch:</a></code>
-<span class="task-item-suffix">required method</span></h3>
+</h3>
 
 	<div class="method-info">
 		<div class="pointy-thing"></div>
@@ -1223,7 +1145,7 @@
 </div><div class="section-method">
 	<a name="//api/name/removeSearchByName:" title="removeSearchByName:"></a>
 	<h3 class="method-title"><code><a href="#//api/name/removeSearchByName:">&ndash;&nbsp;removeSearchByName:</a></code>
-<span class="task-item-suffix">required method</span></h3>
+</h3>
 
 	<div class="method-info">
 		<div class="pointy-thing"></div>
@@ -1281,7 +1203,7 @@
 </div><div class="section-method">
 	<a name="//api/name/setActiveSearchByName:" title="setActiveSearchByName:"></a>
 	<h3 class="method-title"><code><a href="#//api/name/setActiveSearchByName:">&ndash;&nbsp;setActiveSearchByName:</a></code>
-<span class="task-item-suffix">required method</span></h3>
+</h3>
 
 	<div class="method-info">
 		<div class="pointy-thing"></div>
@@ -1344,7 +1266,7 @@
 </div><div class="section-method">
 	<a name="//api/name/searchWithName:" title="searchWithName:"></a>
 	<h3 class="method-title"><code><a href="#//api/name/searchWithName:">&ndash;&nbsp;searchWithName:</a></code>
-<span class="task-item-suffix">required method</span></h3>
+</h3>
 
 	<div class="method-info">
 		<div class="pointy-thing"></div>
@@ -1405,9 +1327,57 @@
 		</div>
 	</div>
 </div><div class="section-method">
+	<a name="//api/name/notifyHypothesisReceived:" title="notifyHypothesisReceived:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/notifyHypothesisReceived:">&ndash;&nbsp;notifyHypothesisReceived:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)notifyHypothesisReceived:(NTHypothesis *)<em>hyp</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/notifyPartialHypothesisReceived:" title="notifyPartialHypothesisReceived:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/notifyPartialHypothesisReceived:">&ndash;&nbsp;notifyPartialHypothesisReceived:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)notifyPartialHypothesisReceived:(NTHypothesis *)<em>hyp</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/notifyDidChangeListeningState:" title="notifyDidChangeListeningState:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/notifyDidChangeListeningState:">&ndash;&nbsp;notifyDidChangeListeningState:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)notifyDidChangeListeningState:(BOOL)<em>state</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
 	<a name="//api/name/addDelegate:" title="addDelegate:"></a>
 	<h3 class="method-title"><code><a href="#//api/name/addDelegate:">&ndash;&nbsp;addDelegate:</a></code>
-<span class="task-item-suffix">required method</span></h3>
+</h3>
 
 	<div class="method-info">
 		<div class="pointy-thing"></div>
@@ -1465,7 +1435,7 @@
 </div><div class="section-method">
 	<a name="//api/name/removeDelegate:" title="removeDelegate:"></a>
 	<h3 class="method-title"><code><a href="#//api/name/removeDelegate:">&ndash;&nbsp;removeDelegate:</a></code>
-<span class="task-item-suffix">required method</span></h3>
+</h3>
 
 	<div class="method-info">
 		<div class="pointy-thing"></div>
@@ -1518,6 +1488,62 @@
 			</div>
 			
 			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Extension Methods" name="task_Extension Methods"></a>
+						<h2 class="task-title">Extension Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/socket" title="socket"></a>
+	<h3 class="method-title"><code><a href="#//api/name/socket">&nbsp;&nbsp;socket</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) GCDAsyncUdpSocket *socket</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/delegates" title="delegates"></a>
+	<h3 class="method-title"><code><a href="#//api/name/delegates">&nbsp;&nbsp;delegates</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSHashTable *delegates</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/port" title="port"></a>
+	<h3 class="method-title"><code><a href="#//api/name/port">&nbsp;&nbsp;port</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) UInt16 port</code></div>
+
+		    
 		</div>
 	</div>
 </div>

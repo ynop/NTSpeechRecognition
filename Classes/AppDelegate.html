@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>NTAudioSourceDelegate Protocol Reference</title>
+	<title>AppDelegate Class Reference</title>
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
@@ -43,8 +43,6 @@
 							<select id="jump-to">
 	<option value="top">Jump To&#133;</option>
 	
-	<option value="overview">Overview</option>
-	
 
 	
 	
@@ -60,7 +58,9 @@
 	
 	<optgroup label="Instance Methods">
 		
-		<option value="//api/name/audioSource:didReadData:">- audioSource:didReadData:</option>
+		<option value="//api/name/applicationDidFinishLaunching:">- applicationDidFinishLaunching:</option>
+		
+		<option value="//api/name/applicationWillTerminate:">- applicationWillTerminate:</option>
 		
 	</optgroup>
 	
@@ -77,29 +77,24 @@
 		<div id="overview_contents" class="container">
 			<div id="content">
 				<main role="main">
-					<h1 class="title">NTAudioSourceDelegate Protocol Reference</h1>
+					<h1 class="title">AppDelegate Class Reference</h1>
 
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
-	<th>Conforms to</th>
+	<th>Inherits from</th>
 	<td>NSObject</td>
 </tr><tr>
+	<th>Conforms to</th>
+	<td>NSApplicationDelegate</td>
+</tr><tr>
 	<th>Declared in</th>
-	<td>NTAudioSource.h</td>
+	<td>AppDelegate.h<br />AppDelegate.m</td>
 </tr>
 						</tbody></table></div>
 					
 
                     
-					
-					<div class="section section-overview">
-						<a title="Overview" name="overview"></a>
-						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>Delegate that receives data produced/read by the audio source.</p>
-					</div>
-					
-					
 
 					
 					
@@ -112,66 +107,35 @@
 
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/audioSource:didReadData:" title="audioSource:didReadData:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/audioSource:didReadData:">&ndash;&nbsp;audioSource:didReadData:</a></code>
-<span class="task-item-suffix">required method</span></h3>
+	<a name="//api/name/applicationDidFinishLaunching:" title="applicationDidFinishLaunching:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/applicationDidFinishLaunching:">&ndash;&nbsp;applicationDidFinishLaunching:</a></code>
+</h3>
 
 	<div class="method-info">
 		<div class="pointy-thing"></div>
 
 		<div class="method-info-container">
 			
-			
-			<div class="method-subsection brief-description">
-				<p>Notification on new data</p>
-			</div>
-			
-		    
 
-			<div class="method-subsection method-declaration"><code>- (void)audioSource:(NTAudioSource *)<em>audioSource</em> didReadData:(NSData *)<em>data</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)applicationDidFinishLaunching:(NSNotification *)<em>aNotification</em></code></div>
 
 		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>audioSource</code></th>
-						<td><p>Source</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>data</code></th>
-						<td><p>Data</p></td>
-					</tr>
-				
-				</table>
-			</div>
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/applicationWillTerminate:" title="applicationWillTerminate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/applicationWillTerminate:">&ndash;&nbsp;applicationWillTerminate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
 			
 
-			
+			<div class="method-subsection method-declaration"><code>- (void)applicationWillTerminate:(NSNotification *)<em>aNotification</em></code></div>
 
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Notification on new data</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">NTAudioSource.h</code></p>
-			</div>
-			
-			
+		    
 		</div>
 	</div>
 </div>
