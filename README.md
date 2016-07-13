@@ -10,6 +10,9 @@ NTSpeechRecognition is a iOS/macOS framework, written in Objective-c, providing 
   * Switch between searches immediatly
   * Partial hypotheses (Before end of utterance is detected)
   * Keyword Spotting, Grammar, NGram
+* Fake Recognizer
+  * Receive hypetheses from UDP connection
+  * Can be used to test apps (Define exactly which hypothesis should show up)
 
 ## Installation
 
