@@ -27,3 +27,4 @@ FOUNDATION_EXPORT const unsigned char NTSpeechRecognitionVersionString[];
 // RECOGNIZER
 #import <NTSpeechRecognition/NTPocketSphinxRecognizer.h>
 #import <NTSpeechRecognition/NTSpeechRecognizer.h>
+#import <NTSpeechRecognition/NTUdpFakeRecognizer.h>

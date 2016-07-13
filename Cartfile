@@ -1,1 +1,2 @@
 github "ynop/NTSpeechTools" "master"
+github "robbiehanson/CocoaAsyncSocket"

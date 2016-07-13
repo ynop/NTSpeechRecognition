@@ -92,6 +92,11 @@
 {
     if (self.isStarted) {
         _isStarted = NO;
+
+        dispatch_async(self.decodeQueue, ^{
+            [self forceEndUtterance];
+        });
+
         [self notifyDidChangeListeningState:self.isListening];
     }
     else {
@@ -105,7 +110,7 @@
         _isSuspended = YES;
 
         dispatch_async(self.decodeQueue, ^{
-            [self suspendDecoding];
+            [self forceEndUtterance];
         });
 
         [self notifyDidChangeListeningState:self.isListening];
@@ -122,7 +127,7 @@
         _isSuspended = NO;
 
         dispatch_async(self.decodeQueue, ^{
-            [self suspendDecoding];
+            [self forceEndUtterance];
         });
 
         [self notifyDidChangeListeningState:self.isListening];
@@ -138,7 +143,7 @@
 }
 
 #pragma mark - Decoding (Executed via dispatch queue)
-- (void)suspendDecoding
+- (void)forceEndUtterance
 {
     if (self.utteranceStarted) {
         [self.decoder endUtterance];
@@ -161,7 +166,7 @@
 - (void)decodeData:(NSData*)data
 {
     if (self.isListening) {
-        int nrOfSamples = data.length / 2;
+        unsigned long nrOfSamples = data.length / 2;
         CFTimeInterval duration = ((double)nrOfSamples) / ((double)self.sampleRate);
 
         // BEGIN UTTERANCE

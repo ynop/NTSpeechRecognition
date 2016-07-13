@@ -1,22 +1,23 @@
 //
 //  ViewController.m
-//  NTPocketSphinxDemoOSX
+//  NTPocketSphinxDemoIOS
 //
 //  Created by Matthias Büchi on 21/06/16.
 //  Copyright © 2016 ZHAW Institute of Applied Information Technology. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "NTMainViewControllerIOS.h"
 #import <NTSpeechRecognition/NTSpeechRecognition.h>
 
-@interface ViewController () <NTSpeechRecognizerDelegate, NSTableViewDelegate, NSTableViewDataSource>
+@interface NTMainViewControllerIOS () <UITableViewDelegate, UITableViewDataSource, NTSpeechRecognizerDelegate>
 
-@property (weak) IBOutlet NSButtonCell* startButton;
-@property (weak) IBOutlet NSButton* suspendButton;
-@property (weak) IBOutlet NSTextField* statusLabel;
-@property (unsafe_unretained) IBOutlet NSTextView* hypothesesArea;
-@property (weak) IBOutlet NSButton* returnNullHypsCheckBox;
-@property (weak) IBOutlet NSButton* returnPartialHypsCheckBox;
+@property (weak, nonatomic) IBOutlet UIButton* startButton;
+@property (weak, nonatomic) IBOutlet UIButton* suspendButton;
+@property (weak, nonatomic) IBOutlet UILabel* statusLabel;
+@property (weak, nonatomic) IBOutlet UISwitch* nullHypSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch* partHypSwitch;
+@property (weak, nonatomic) IBOutlet UITextView* hypField;
+@property (weak, nonatomic) IBOutlet UITableView* searchesTable;
 
 @property (nonatomic, strong) NTPocketSphinxRecognizer* recognizer;
 @property (nonatomic, strong) NTMicrophoneAudioSource* source;
@@ -32,8 +33,6 @@
 
 @property (nonatomic, strong) NSMutableArray* lastHyps;
 
-@property (weak) IBOutlet NSTableView* searchesTable;
-
 @end
 
 @implementation ViewController
@@ -41,8 +40,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    // Do any additional setup after loading the view.
 
     self.lastHyps = [NSMutableArray array];
 
@@ -77,51 +74,53 @@
     [self.recognizer addSearch:self.icaoSearch];
     [self.recognizer addSearch:self.controlSearch];
     [self.recognizer addSearch:self.commandSearch];
+
+    [self.searchesTable reloadData];
+    self.hypField.text = @"";
 }
 
-- (void)setRepresentedObject:(id)representedObject
+- (void)didReceiveMemoryWarning
 {
-    [super setRepresentedObject:representedObject];
-
-    // Update the view, if already loaded.
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)start:(id)sender
+- (IBAction)startStop:(id)sender
 {
     if (self.recognizer.isStarted) {
         [self.recognizer stop];
         [self.source stop];
-        self.startButton.title = @"Start";
+        [self.startButton setTitle:@"Start" forState:UIControlStateNormal];
     }
     else {
         [self.recognizer start];
         [self.source start];
-        self.startButton.title = @"Stop";
+        [self.startButton setTitle:@"Stop" forState:UIControlStateNormal];
     }
 }
 
-- (IBAction)suspend:(id)sender
+- (IBAction)suspendResume:(id)sender
 {
     if (self.recognizer.isSuspended) {
         [self.recognizer resume];
         [self.source resume];
-        self.suspendButton.title = @"Suspend";
+        [self.suspendButton setTitle:@"Suspend" forState:UIControlStateNormal];
     }
     else {
         [self.recognizer suspend];
         [self.source resume];
-        self.suspendButton.title = @"Resume";
+        [self.suspendButton setTitle:@"Resume" forState:UIControlStateNormal];
     }
 }
 
-- (IBAction)setReturnNullHypotheses:(id)sender
+- (IBAction)setReturnNullHyps:(id)sender
 {
-    self.recognizer.returnNullHypotheses = (self.returnNullHypsCheckBox.state == NSOnState);
+    self.recognizer.returnNullHypotheses = self.nullHypSwitch.on;
 }
 
-- (IBAction)setReturnPartialHypotheses:(id)sender
+- (IBAction)setReturnPartialHyps:(id)sender
 {
-    self.recognizer.returnPartialHypotheses = (self.returnPartialHypsCheckBox.state == NSOnState);
+    self.recognizer.returnPartialHypotheses = self.partHypSwitch.on;
 }
 
 #pragma mark - Speech Recognizer Delegate
@@ -140,7 +139,7 @@
             all = [all stringByAppendingFormat:@"%@\n", hyp];
         }
 
-        self.hypothesesArea.string = all;
+        self.hypField.text = all;
 
     });
 }
@@ -160,7 +159,7 @@
             all = [all stringByAppendingFormat:@"%@\n", hyp];
         }
 
-        self.hypothesesArea.string = all;
+        self.hypField.text = all;
 
     });
 }
@@ -170,38 +169,52 @@
     dispatch_async(dispatch_get_main_queue(), ^{
         if (self.recognizer.isStarted) {
             if (self.recognizer.isSuspended) {
-                self.statusLabel.stringValue = @"Suspended";
+                self.statusLabel.text = @"Suspended";
             }
             else {
-                self.statusLabel.stringValue = @"Listening ...";
+                self.statusLabel.text = @"Listening ...";
             }
         }
         else {
-            self.statusLabel.stringValue = @"Stopped";
+            self.statusLabel.text = @"Stopped";
         }
 
     });
 }
 
-#pragma mark - TableView
-- (NSInteger)numberOfRowsInTableView:(NSTableView*)tableView
+#pragma mark - UITableView
+- (NSInteger)numberOfSectionsInTableView:(UITableView*)tableView
+{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView*)tableView numberOfRowsInSection:(NSInteger)section
 {
     return self.recognizer.searches.count;
 }
 
-- (id)tableView:(NSTableView*)tableView objectValueForTableColumn:(NSTableColumn*)tableColumn row:(NSInteger)row
+- (UITableViewCell*)tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath*)indexPath
 {
-    NTSpeechSearch* search = self.recognizer.searches[row];
+    static NSString* CellIdentifier = @"cell";
 
-    return search.name;
+    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
+
+    cell.textLabel.text = self.recognizer.searches[indexPath.row].name;
+
+    return cell;
 }
 
-- (BOOL)tableView:(NSTableView*)tableView shouldSelectRow:(NSInteger)row
+- (void)tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath*)indexPath
 {
-    NTSpeechSearch* search = self.recognizer.searches[row];
-    [self.recognizer setActiveSearchByName:search.name];
+    if (indexPath.row < self.recognizer.searches.count) {
+        NTSpeechSearch* search = self.recognizer.searches[indexPath.row];
 
-    return YES;
+        [self.recognizer setActiveSearchByName:search.name];
+    }
 }
 
 @end

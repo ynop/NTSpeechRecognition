@@ -7,6 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A9465EE31D362426003A7BDD /* NTUdpFakeRecognizer.h in Headers */ = {isa = PBXBuildFile; fileRef = A9465EE11D362426003A7BDD /* NTUdpFakeRecognizer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A9465EE41D362426003A7BDD /* NTUdpFakeRecognizer.h in Headers */ = {isa = PBXBuildFile; fileRef = A9465EE11D362426003A7BDD /* NTUdpFakeRecognizer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A9465EE51D362426003A7BDD /* NTUdpFakeRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = A9465EE21D362426003A7BDD /* NTUdpFakeRecognizer.m */; };
+		A9465EE61D362426003A7BDD /* NTUdpFakeRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = A9465EE21D362426003A7BDD /* NTUdpFakeRecognizer.m */; };
+		A9465EED1D36257E003A7BDD /* CocoaAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9465EEC1D36257E003A7BDD /* CocoaAsyncSocket.framework */; };
+		A9465EF11D3625A0003A7BDD /* CocoaAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9465EF01D3625A0003A7BDD /* CocoaAsyncSocket.framework */; };
+		A9465EF21D3625CB003A7BDD /* CocoaAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9465EF01D3625A0003A7BDD /* CocoaAsyncSocket.framework */; };
+		A9465EF31D3625CB003A7BDD /* CocoaAsyncSocket.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A9465EF01D3625A0003A7BDD /* CocoaAsyncSocket.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A9465F171D363286003A7BDD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A9465F161D363286003A7BDD /* AppDelegate.m */; };
+		A9465F1A1D363286003A7BDD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A9465F191D363286003A7BDD /* main.m */; };
+		A9465F1D1D363286003A7BDD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9465F1C1D363286003A7BDD /* ViewController.m */; };
+		A9465F1F1D363286003A7BDD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9465F1E1D363286003A7BDD /* Assets.xcassets */; };
+		A9465F221D363286003A7BDD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9465F201D363286003A7BDD /* Main.storyboard */; };
+		A9465F2A1D3633C2003A7BDD /* CocoaAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9465EEC1D36257E003A7BDD /* CocoaAsyncSocket.framework */; };
+		A9465F2B1D3633C2003A7BDD /* CocoaAsyncSocket.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A9465EEC1D36257E003A7BDD /* CocoaAsyncSocket.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A960E89E1D26930200E20C7E /* commands.dic in Resources */ = {isa = PBXBuildFile; fileRef = A960E89C1D26930200E20C7E /* commands.dic */; };
 		A960E89F1D26930200E20C7E /* commands.kws in Resources */ = {isa = PBXBuildFile; fileRef = A960E89D1D26930200E20C7E /* commands.kws */; };
 		A99656171D2551D500120D06 /* date.dic in Resources */ = {isa = PBXBuildFile; fileRef = A996560F1D2551D500120D06 /* date.dic */; };
@@ -158,13 +173,13 @@
 		A99C2B2C1D21634D001FA630 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A99C2B241D21634D001FA630 /* Assets.xcassets */; };
 		A99C2B2D1D21634D001FA630 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A99C2B251D21634D001FA630 /* Main.storyboard */; };
 		A99C2B2F1D21634D001FA630 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A99C2B281D21634D001FA630 /* main.m */; };
-		A99C2B301D21634D001FA630 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A99C2B2A1D21634D001FA630 /* ViewController.m */; };
+		A99C2B301D21634D001FA630 /* NTMainViewControllerOSX.m in Sources */ = {isa = PBXBuildFile; fileRef = A99C2B2A1D21634D001FA630 /* NTMainViewControllerOSX.m */; };
 		A99C2B3D1D21635D001FA630 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A99C2B331D21635D001FA630 /* AppDelegate.m */; };
 		A99C2B3E1D21635D001FA630 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A99C2B341D21635D001FA630 /* Assets.xcassets */; };
 		A99C2B3F1D21635D001FA630 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A99C2B351D21635D001FA630 /* LaunchScreen.storyboard */; };
 		A99C2B401D21635D001FA630 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A99C2B371D21635D001FA630 /* Main.storyboard */; };
 		A99C2B421D21635D001FA630 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A99C2B3A1D21635D001FA630 /* main.m */; };
-		A99C2B431D21635D001FA630 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A99C2B3C1D21635D001FA630 /* ViewController.m */; };
+		A99C2B431D21635D001FA630 /* NTMainViewControllerIOS.m in Sources */ = {isa = PBXBuildFile; fileRef = A99C2B3C1D21635D001FA630 /* NTMainViewControllerIOS.m */; };
 		A99C2B451D21639C001FA630 /* en-us in Resources */ = {isa = PBXBuildFile; fileRef = A99C2B441D21639C001FA630 /* en-us */; };
 		A99C2B461D21639C001FA630 /* en-us in Resources */ = {isa = PBXBuildFile; fileRef = A99C2B441D21639C001FA630 /* en-us */; };
 		A99C2B471D2163A0001FA630 /* cmudict-en-us.dic in Resources */ = {isa = PBXBuildFile; fileRef = A99C2A5B1D216308001FA630 /* cmudict-en-us.dic */; };
@@ -195,12 +210,24 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		A9465F2C1D3633C2003A7BDD /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A9465F2B1D3633C2003A7BDD /* CocoaAsyncSocket.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A9F506EB1D195ED300498B4E /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				A9465EF31D3625CB003A7BDD /* CocoaAsyncSocket.framework in Embed Frameworks */,
 				A9F506E81D195ED300498B4E /* NTSpeechRecognition.framework in Embed Frameworks */,
 				A99656461D26916900120D06 /* NTSpeechTools.framework in Embed Frameworks */,
 			);
@@ -210,6 +237,19 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A9465EE11D362426003A7BDD /* NTUdpFakeRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTUdpFakeRecognizer.h; sourceTree = "<group>"; };
+		A9465EE21D362426003A7BDD /* NTUdpFakeRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTUdpFakeRecognizer.m; sourceTree = "<group>"; };
+		A9465EEC1D36257E003A7BDD /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CocoaAsyncSocket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9465EF01D3625A0003A7BDD /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaAsyncSocket.framework; path = "../Debug-iphonesimulator/CocoaAsyncSocket.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9465F131D363286003A7BDD /* NTFakeRecognizerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NTFakeRecognizerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9465F151D363286003A7BDD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		A9465F161D363286003A7BDD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		A9465F191D363286003A7BDD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A9465F1B1D363286003A7BDD /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		A9465F1C1D363286003A7BDD /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		A9465F1E1D363286003A7BDD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A9465F211D363286003A7BDD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A9465F231D363286003A7BDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A960E89C1D26930200E20C7E /* commands.dic */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = commands.dic; sourceTree = "<group>"; };
 		A960E89D1D26930200E20C7E /* commands.kws */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = commands.kws; sourceTree = "<group>"; };
 		A996560F1D2551D500120D06 /* date.dic */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = date.dic; sourceTree = "<group>"; };
@@ -308,8 +348,8 @@
 		A99C2B261D21634D001FA630 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A99C2B271D21634D001FA630 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A99C2B281D21634D001FA630 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		A99C2B291D21634D001FA630 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		A99C2B2A1D21634D001FA630 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		A99C2B291D21634D001FA630 /* NTMainViewControllerOSX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTMainViewControllerOSX.h; sourceTree = "<group>"; };
+		A99C2B2A1D21634D001FA630 /* NTMainViewControllerOSX.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTMainViewControllerOSX.m; sourceTree = "<group>"; };
 		A99C2B321D21635D001FA630 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A99C2B331D21635D001FA630 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		A99C2B341D21635D001FA630 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -317,8 +357,8 @@
 		A99C2B381D21635D001FA630 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A99C2B391D21635D001FA630 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A99C2B3A1D21635D001FA630 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		A99C2B3B1D21635D001FA630 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		A99C2B3C1D21635D001FA630 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		A99C2B3B1D21635D001FA630 /* NTMainViewControllerIOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTMainViewControllerIOS.h; sourceTree = "<group>"; };
+		A99C2B3C1D21635D001FA630 /* NTMainViewControllerIOS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTMainViewControllerIOS.m; sourceTree = "<group>"; };
 		A99C2B441D21639C001FA630 /* en-us */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "en-us"; sourceTree = "<group>"; };
 		A99C2B701D229DBF001FA630 /* NTPocketSphinxConfigArgument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTPocketSphinxConfigArgument.h; sourceTree = "<group>"; };
 		A99C2B711D229DBF001FA630 /* NTPocketSphinxConfigArgument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTPocketSphinxConfigArgument.m; sourceTree = "<group>"; };
@@ -331,10 +371,19 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		A9465F101D363286003A7BDD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A9465F2A1D3633C2003A7BDD /* CocoaAsyncSocket.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A9F505B21D193F4300498B4E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9465EED1D36257E003A7BDD /* CocoaAsyncSocket.framework in Frameworks */,
 				A9F508EC1D1AC25600498B4E /* NTSpeechTools.framework in Frameworks */,
 				A99C2B131D216318001FA630 /* libpocketsphinx.a in Frameworks */,
 				A99C2B151D216318001FA630 /* libsphinxbase.a in Frameworks */,
@@ -346,6 +395,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9465EF11D3625A0003A7BDD /* CocoaAsyncSocket.framework in Frameworks */,
 				A9F508E81D1AC23C00498B4E /* NTSpeechTools.framework in Frameworks */,
 				A99C2B1D1D21633A001FA630 /* libpocketsphinx.a in Frameworks */,
 				A99C2B1F1D21633A001FA630 /* libsphinxbase.a in Frameworks */,
@@ -365,6 +415,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9465EF21D3625CB003A7BDD /* CocoaAsyncSocket.framework in Frameworks */,
 				A9F506E61D195E2800498B4E /* NTSpeechRecognition.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -372,6 +423,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A9465F141D363286003A7BDD /* NTFakeRecognizerApp */ = {
+			isa = PBXGroup;
+			children = (
+				A9465F151D363286003A7BDD /* AppDelegate.h */,
+				A9465F161D363286003A7BDD /* AppDelegate.m */,
+				A9465F1B1D363286003A7BDD /* ViewController.h */,
+				A9465F1C1D363286003A7BDD /* ViewController.m */,
+				A9465F1E1D363286003A7BDD /* Assets.xcassets */,
+				A9465F201D363286003A7BDD /* Main.storyboard */,
+				A9465F231D363286003A7BDD /* Info.plist */,
+				A9465F181D363286003A7BDD /* Supporting Files */,
+			);
+			path = NTFakeRecognizerApp;
+			sourceTree = "<group>";
+		};
+		A9465F181D363286003A7BDD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A9465F191D363286003A7BDD /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		A996560E1D2551D500120D06 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -547,6 +621,8 @@
 				A99C2A791D216308001FA630 /* NTSpeechRecognizer.h */,
 				A99C2A771D216308001FA630 /* NTPocketSphinxRecognizer.h */,
 				A99C2A781D216308001FA630 /* NTPocketSphinxRecognizer.m */,
+				A9465EE11D362426003A7BDD /* NTUdpFakeRecognizer.h */,
+				A9465EE21D362426003A7BDD /* NTUdpFakeRecognizer.m */,
 			);
 			path = Recognizer;
 			sourceTree = "<group>";
@@ -608,8 +684,8 @@
 				A99C2B251D21634D001FA630 /* Main.storyboard */,
 				A99C2B271D21634D001FA630 /* Info.plist */,
 				A99C2B281D21634D001FA630 /* main.m */,
-				A99C2B291D21634D001FA630 /* ViewController.h */,
-				A99C2B2A1D21634D001FA630 /* ViewController.m */,
+				A99C2B291D21634D001FA630 /* NTMainViewControllerOSX.h */,
+				A99C2B2A1D21634D001FA630 /* NTMainViewControllerOSX.m */,
 			);
 			path = NTSpeechRecognitionDemoOSX;
 			sourceTree = "<group>";
@@ -625,8 +701,8 @@
 				A99C2B371D21635D001FA630 /* Main.storyboard */,
 				A99C2B391D21635D001FA630 /* Info.plist */,
 				A99C2B3A1D21635D001FA630 /* main.m */,
-				A99C2B3B1D21635D001FA630 /* ViewController.h */,
-				A99C2B3C1D21635D001FA630 /* ViewController.m */,
+				A99C2B3B1D21635D001FA630 /* NTMainViewControllerIOS.h */,
+				A99C2B3C1D21635D001FA630 /* NTMainViewControllerIOS.m */,
 			);
 			path = NTSpeechRecognitionDemoIOS;
 			sourceTree = "<group>";
@@ -639,6 +715,7 @@
 				A99C2B171D21633A001FA630 /* NTSpeechRecognitionIOS */,
 				A99C2B211D21634D001FA630 /* NTSpeechRecognitionDemoOSX */,
 				A99C2B311D21635D001FA630 /* NTSpeechRecognitionDemoIOS */,
+				A9465F141D363286003A7BDD /* NTFakeRecognizerApp */,
 				A9F508DE1D1AC1B900498B4E /* Frameworks */,
 				A9F505B71D193F4300498B4E /* Products */,
 			);
@@ -651,6 +728,7 @@
 				A9F505C61D193F7200498B4E /* NTSpeechRecognition.framework */,
 				A9F506A31D195B8200498B4E /* NTSpeechRecognition.app */,
 				A9F506CE1D195DE000498B4E /* NTSpeechRecognition.app */,
+				A9465F131D363286003A7BDD /* NTFakeRecognizerApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -658,6 +736,8 @@
 		A9F508DE1D1AC1B900498B4E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A9465EF01D3625A0003A7BDD /* CocoaAsyncSocket.framework */,
+				A9465EEC1D36257E003A7BDD /* CocoaAsyncSocket.framework */,
 				A9F508EB1D1AC25600498B4E /* NTSpeechTools.framework */,
 				A9F508E71D1AC23C00498B4E /* NTSpeechTools.framework */,
 			);
@@ -677,6 +757,7 @@
 				A99C2AC31D216308001FA630 /* prim_type.h in Headers */,
 				A99C2A951D216308001FA630 /* case.h in Headers */,
 				A99C2B031D216308001FA630 /* NTPocketSphinxRecognizer.h in Headers */,
+				A9465EE31D362426003A7BDD /* NTUdpFakeRecognizer.h in Headers */,
 				A99C2A991D216308001FA630 /* clapack_lite.h in Headers */,
 				A99C2A911D216308001FA630 /* bitvec.h in Headers */,
 				A99C2ACF1D216308001FA630 /* strfuncs.h in Headers */,
@@ -736,6 +817,7 @@
 				A99C2AC41D216308001FA630 /* prim_type.h in Headers */,
 				A99C2A961D216308001FA630 /* case.h in Headers */,
 				A99C2B041D216308001FA630 /* NTPocketSphinxRecognizer.h in Headers */,
+				A9465EE41D362426003A7BDD /* NTUdpFakeRecognizer.h in Headers */,
 				A99C2A9A1D216308001FA630 /* clapack_lite.h in Headers */,
 				A99C2A921D216308001FA630 /* bitvec.h in Headers */,
 				A99C2AD01D216308001FA630 /* strfuncs.h in Headers */,
@@ -788,6 +870,24 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		A9465F121D363286003A7BDD /* NTFakeRecognizerApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A9465F241D363286003A7BDD /* Build configuration list for PBXNativeTarget "NTFakeRecognizerApp" */;
+			buildPhases = (
+				A9465F0F1D363286003A7BDD /* Sources */,
+				A9465F101D363286003A7BDD /* Frameworks */,
+				A9465F111D363286003A7BDD /* Resources */,
+				A9465F2C1D3633C2003A7BDD /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NTFakeRecognizerApp;
+			productName = NTFakeRecognizerApp;
+			productReference = A9465F131D363286003A7BDD /* NTFakeRecognizerApp.app */;
+			productType = "com.apple.product-type.application";
+		};
 		A9F505B51D193F4300498B4E /* NTSpeechRecognitionOSX */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A9F505BE1D193F4300498B4E /* Build configuration list for PBXNativeTarget "NTSpeechRecognitionOSX" */;
@@ -869,6 +969,9 @@
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "ZHAW Institute of Applied Information Technology";
 				TargetAttributes = {
+					A9465F121D363286003A7BDD = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
 					A9F505B51D193F4300498B4E = {
 						CreatedOnToolsVersion = 7.3.1;
 					};
@@ -900,11 +1003,21 @@
 				A9F505C51D193F7200498B4E /* NTSpeechRecognitionIOS */,
 				A9F506A21D195B8200498B4E /* NTSpeechRecognitionDemoOSX */,
 				A9F506CD1D195DE000498B4E /* NTSpeechRecognitionDemoIOS */,
+				A9465F121D363286003A7BDD /* NTFakeRecognizerApp */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		A9465F111D363286003A7BDD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A9465F1F1D363286003A7BDD /* Assets.xcassets in Resources */,
+				A9465F221D363286003A7BDD /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A9F505B41D193F4300498B4E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -973,12 +1086,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		A9465F0F1D363286003A7BDD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A9465F1D1D363286003A7BDD /* ViewController.m in Sources */,
+				A9465F1A1D363286003A7BDD /* main.m in Sources */,
+				A9465F171D363286003A7BDD /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A9F505B11D193F4300498B4E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				A99C2AF31D216308001FA630 /* NTAudioSource.m in Sources */,
 				A99C2B051D216308001FA630 /* NTPocketSphinxRecognizer.m in Sources */,
+				A9465EE51D362426003A7BDD /* NTUdpFakeRecognizer.m in Sources */,
 				A99C2AFD1D216308001FA630 /* NTPocketSphinxConfig.m in Sources */,
 				A99C2B011D216308001FA630 /* NTPocketSphinxDecoder.m in Sources */,
 				A99C2B0B1D216308001FA630 /* NTFileSystem.m in Sources */,
@@ -993,6 +1117,7 @@
 			files = (
 				A99C2AF41D216308001FA630 /* NTAudioSource.m in Sources */,
 				A99C2B061D216308001FA630 /* NTPocketSphinxRecognizer.m in Sources */,
+				A9465EE61D362426003A7BDD /* NTUdpFakeRecognizer.m in Sources */,
 				A99C2AFE1D216308001FA630 /* NTPocketSphinxConfig.m in Sources */,
 				A99C2B021D216308001FA630 /* NTPocketSphinxDecoder.m in Sources */,
 				A99C2B0C1D216308001FA630 /* NTFileSystem.m in Sources */,
@@ -1005,7 +1130,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A99C2B301D21634D001FA630 /* ViewController.m in Sources */,
+				A99C2B301D21634D001FA630 /* NTMainViewControllerOSX.m in Sources */,
 				A99C2B2F1D21634D001FA630 /* main.m in Sources */,
 				A99656221D2553C200120D06 /* control.lm in Sources */,
 				A99C2B2B1D21634D001FA630 /* AppDelegate.m in Sources */,
@@ -1016,7 +1141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A99C2B431D21635D001FA630 /* ViewController.m in Sources */,
+				A99C2B431D21635D001FA630 /* NTMainViewControllerIOS.m in Sources */,
 				A99C2B421D21635D001FA630 /* main.m in Sources */,
 				A99656381D25829F00120D06 /* control.lm in Sources */,
 				A99C2B3D1D21635D001FA630 /* AppDelegate.m in Sources */,
@@ -1034,6 +1159,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		A9465F201D363286003A7BDD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A9465F211D363286003A7BDD /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
 		A99C2B251D21634D001FA630 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1061,6 +1194,30 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		A9465F251D363286003A7BDD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = NTFakeRecognizerApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ch.zhaw.init.NTFakeRecognizerApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A9465F261D363286003A7BDD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = NTFakeRecognizerApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ch.zhaw.init.NTFakeRecognizerApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		A9F505BC1D193F4300498B4E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1311,6 +1468,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		A9465F241D363286003A7BDD /* Build configuration list for PBXNativeTarget "NTFakeRecognizerApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A9465F251D363286003A7BDD /* Debug */,
+				A9465F261D363286003A7BDD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		A9F505B01D193F4300498B4E /* Build configuration list for PBXProject "NTSpeechRecognition" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

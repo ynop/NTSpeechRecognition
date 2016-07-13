@@ -1,14 +1,14 @@
 //
 //  ViewController.h
-//  NTPocketSphinxDemoIOS
+//  NTPocketSphinxDemoOSX
 //
 //  Created by Matthias Büchi on 21/06/16.
 //  Copyright © 2016 ZHAW Institute of Applied Information Technology. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Cocoa/Cocoa.h>
 
-@interface ViewController : UIViewController
+@interface NTMainViewControllerOSX : NSViewController
 
 
 @end

@@ -7,4 +7,7 @@
    <FileRef
       location = "group:Carthage/Checkouts/NTSpeechTools/NTSpeechTools.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:Carthage/Checkouts/CocoaAsyncSocket/CocoaAsyncSocket.xcodeproj">
+   </FileRef>
 </Workspace>
